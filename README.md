@@ -54,8 +54,8 @@ os dados são salvos em um arquivo csv
 ### Visão Geral
 
 54 listas, de 1993 a 2020
-Total de X registros
-Atributos:
+Total de 2800 registros
+Atributos (nem todas as listas tem todos esses atributos):
 
 Rank
 Site
@@ -124,6 +124,7 @@ Rpeak, Rmax
 #### Países
 - Agrupar países em relaçao ao poder computacional
 - Qual foi a evolução dos países?
+- Todos os continentes tiveram, em algum momento, representantes no Top500?
 
 #### Fabricantes
 
