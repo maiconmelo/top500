@@ -126,6 +126,13 @@ Rpeak, Rmax
 - Qual foi a evolução dos países?
 - Todos os continentes tiveram, em algum momento, representantes no Top500?
 
+
+
+
+
+
+
+
 #### Fabricantes
 
 #### Interconexão
