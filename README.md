@@ -1,6 +1,6 @@
 <!-- antes de enviar a versão final, solicitamos que todos os comentários, colocados para orientação ao aluno, sejam removidos do arquivo -->
 
-# Extração, Exploração e Análise de Dados dos Supercomputadores Listados na Top500
+# Exploração e Análise de Dados dos Supercomputadores Listados no Top500
 
 #### Aluno: [Maicon Melo Alves](https://github.com/maiconmelo).
 #### Orientadora: [Evelyn Conceição Santos Batista](https://github.com/link_do_github).
@@ -57,67 +57,7 @@ os dados são salvos em um arquivo csv
 Total de 2800 registros
 Atributos (nem todas as listas tem todos esses atributos):
 
-Rank
-Site
-Manufacturer
-Computer
-Country
-Year
-Processors
-RMax
-RPeak
-Nmax
-Nhalf
-Processor Family
-Processor
-Proc. Frequency
-System Family
-Operating System
-Architecture
-Segment
-Application Area
-Interconnect Family
-Interconnect
-Region
-Continent
-List
-Power
-System Model
-Cores
-Measured Size
-Processor Cores
-Accelerator
-Name
-Total Cores
-Accelerator Cores
-Rmax
-Rpeak
-Effeciency (%)
-Mflops/Watt
-Processor Technology
-Processor Speed (MHz)
-OS Family
-Cores per Socket
-Processor Generation
-Previous Rank
-First Appearance
-First Rank
-Accelerator/Co-Processor Cores
-Accelerator/Co-Processor
-Efficiency (%)
-Power Source
-Rmax [TFlop/s]
-Rpeak [TFlop/s]
-HPCG [TFlop/s]
-Power (kW)
-Power Effeciency [GFlops/Watts]
-Site ID
-System ID
-Power Efficiency [GFlops/Watts]
-Memory
 
-
-Rpeak, Rmax
 
 ### Análise 
 
