@@ -51,21 +51,22 @@ web scraping do site tal, de tal jeito. Excel, token,
 
 os dados são salvos em um arquivo csv 
 
+Mas há inconsistências. Foi preciso fazer ajustes manuais. 
+
 ### Visão Geral
 
 54 listas, de 1993 a 2020
 Total de 2800 registros
-Atributos (nem todas as listas tem todos esses atributos):
+Atributos:
 
 
 
 ### Análise 
 
 #### Países
-- Agrupar países em relaçao ao poder computacional
-- Qual foi a evolução dos países?
-- Todos os continentes tiveram, em algum momento, representantes no Top500?
-
+- Representatividade dos países por número de ocorrências na lista (presença na lista). Mostrar mapa e barra
+- Representatividade dos países por número de ocorrências no Top5. Mostrar gráfico de barras. Há algumas diferenças entre estar presente e estar bem posicionado
+- 
 
 
 
@@ -74,6 +75,7 @@ Atributos (nem todas as listas tem todos esses atributos):
 
 
 #### Fabricantes
+Nuvem de palavras
 
 #### Interconexão
 
