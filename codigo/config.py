@@ -14,4 +14,4 @@ release_months = ["06", "11"]
 login_url = "https://www.top500.org/accounts/login/"
 username =  "maiconmeloalves"
 password = "jKVDvrmyM9zERXd"
-data_filename = "top500.csv"
+data_path = "data/top500.csv"

@@ -40,7 +40,9 @@ def process_columns(raw_data):
     return data
     
           
-def download_data(session):
+def download_data():
+    session = login_website()
+    
     released_dates = itertools.product(cfg.years_range, cfg.release_months)
 
     df_top500 = pd.DataFrame()
@@ -63,15 +65,7 @@ def download_data(session):
 
 def get_data():
     print("Getting data...")
-    if os.path.isfile(cfg.data_filename):
-        df_top500 = pd.read_csv(cfg.data_filename)
-    else:
-        print("Data not found.")
-        print("Downloading...")
-        session = login_website()
-        df_top500 = download_data(session)
-        df_top500.to_csv(cfg.data_filename)
-    
-    print("Done!")
-
-    return df_top500
+    if os.path.isfile(cfg.data_path):
+        df_top500 = pd.read_csv(cfg.data_path)
+        print("Done!")
+        return df_top500
