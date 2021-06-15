@@ -39,7 +39,7 @@ Mais do que um relatório sobre equipamentos e dispositivos, a Top500 indica qua
 
 Por meio da extração, exploração e análise de dados dos supercomputadores listados em todas as edições no Top500, esse trabalho tem o objetivo de analisar e investigar os seguintes aspectos: 
 
-- Evolução do posicionamento geopolítico dos países em relação à pesquisa e desenvolvimento
+- Evolução do posicionamento geopolítico dos países em relação a supercomputação
 - Tendências atuais relacionadas às tecnologias de interconexão e processamento
 - Adoção de dispositivos específicos para aceleração
 - Inclinação ao uso de arquiteturas abertas ou proprietárias
@@ -70,11 +70,13 @@ Atributos:
        'Power', 'Accelerator', 'Name', 'Efficiency', 'Power Source',
        'Power Efficiency'
 
+exemplo: tianhe2
 
+Nem todos os registros possuem dados para todos esses atributos. Isso acontece, pois muitos atributos foram incluídos somente a partir de um ano. 
 
 ### Análise 
 
-#### Países
+#### As nações e o seu posicionamento geopolítico em supercomputação
 
 
 
