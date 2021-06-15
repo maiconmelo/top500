@@ -27,22 +27,15 @@ Trabalho apresentado ao curso [BI MASTER](https://ica.puc-rio.ai/bi-master) como
 
 
 ### Introdução
+A **Computação de Alto Desempenho** (*High Performance Computing*) tem sido usada há decadas como um recurso fundamental para alavancar as pesquisas realizadas em áreas como biologia, física, química, estudos climáticos, exploração e produção de petróleo, economia, entre várias outras. Essas áreas possuem problemas complexos que, por demandarem alto poder computacional, só podem ser resolvidos em tempo razoável utilizando um supercomputador. Essencialmente, um supercomputador é um aglomerado de servidores interconectados por uma rede de comunicação de alta velocidade que trabalham em conjunto para resolver um dado problema. 
+
+Além das tradicionais áreas científicas que empregam computação de alto desempenho, 
 
 A lista top 500
 Listas liberadas nos meses de junho e novembro
 
 ### Objetivos
-- Correlação entre poder computacional e processadores, aceleradores, interconexão, memória. Essa correlação sofreu alguma mudança ao longo do tempo? Se sim, o que explicaria?
-- Houve algum incremento na adoção de arquiteturas fechadas? Tem correlação com o desempenho?
-- A diferença entre Rpeak e Rmax, proporcionalmente, teve alguma mudança ao longo do tempo?
-- Países que mais tem avançado ou regredido no assunto de supercomputação (poder computacional absoluto, quantidade de supercomputadores)
-- O que se pode dizer sobre a relação entre Green500 e TOP500?
-- Fabricante em expansão ou retração
-- Tipos de aplicação ou áreas em expansão ou retração
-- O que se pode avaliar sobre compilador, sistema operacional, MPI?
-- Especificamente sobre o Brasil, o que pode ser avaliado?
-- Modelo para previsão do poder computacional, Rpeak e Rmax, ao longo do tempo. Pelo modelo, quando alcançaríamos Exaflop?
-- Agrupar países em relaçao ao poder computacional
+
 
 
 ### Extração
@@ -64,13 +57,6 @@ Atributos:
 ### Análise 
 
 #### Países
-- Representatividade dos países por número de ocorrências na lista (presença na lista). Mostrar mapa e barra
-- Representatividade dos países por número de ocorrências no Top5. Mostrar gráfico de barras. Há algumas diferenças entre estar presente e estar bem posicionado
-- 
-
-
-
-
 
 
 
