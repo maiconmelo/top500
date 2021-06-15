@@ -35,14 +35,16 @@ Com a finalidade de dar visibilidade a esse assunto, um grupo de autores decidiu
 
 Mais do que um relatório sobre equipamentos e dispositivos, a Top500 indica quais são as tecnologias que estão na **vanguarda** da computação mundial, além de revelar o **posicionamento geopolítico** das nações em relação aos investimentos em **pesquisa científica**. De fato, como dito anteriormente, a evolução da pesquisa e desenvolvimento em algumas áreas está diretamente relacionada ao poder computacional disponível para resolver, em tempo hábil, problemas complexos.
 
-### Motivação
-Atualmente, a lista Top500 conta com um total de 56 edições que foram publicadas ao longo desses seus 27 anos de existência. As informações a respeito dos 28000 supercomputadores presentes nessa lista podem revelar questões interessantes como a evolução do posicionamento geopolítico dos países em relação à pesquisa e desenvolvimento, as tendências relacionadas às tecnologias de interconexão e processamento, adoção de dispositivos específicos para aceleração, inclinação ao uso de arquiteturas abertas ou proprietárias, mudanças nos paradigmas e técnicas empregadas nessa área, dentre vários outros aspectos. 
+### Objetivo
+Por meio da extração, exploração e análise de dados dos supercomputadores listados em todas as edições no Top500, esse trabalho tem o objetivo de analisar e investigar os seguintes aspectos: 
 
-Além disso, pode-se investigar quais são os fatores que apresentam maior correlação com o desempenho obtido pelos supercomputadores, e se essa relação sofreu alguma alteração ao longo do tempo. 
-
-### Objetivos
-
-Para responder todas estas questões, este trabalho tem a finalidade de realizar a extração, exploração e análise de dados de todos os supercomputadores listados na Top500 em todas as suas edições. 
+- Evolução do posicionamento geopolítico dos países em relação à pesquisa e desenvolvimento
+- Tendências atuais relacionadas às tecnologias de interconexão e processamento
+- Adoção de dispositivos específicos para aceleração
+- Inclinação ao uso de arquiteturas abertas ou proprietárias
+- Mudanças nos paradigmas e técnicas empregadas nessa área
+- Fatores que apresentam maior correlação com o desempenho obtido pelos supercomputadores
+- Previsão para o rompimento da barreira de 1 Exaflop
 
 ### Extração
 
