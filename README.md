@@ -33,26 +33,29 @@ Com os recentes avanços na área de Inteligência Artificial, a computação de
 
 Com a finalidade de dar visibilidade a esse assunto, um grupo de autores decidiu, em 1993, compilar e manter uma lista dos 500 supercomputadores mais poderosos existentes no planeta. Essa lista é divulgada duas vezes ao ano (junho e novembro) e permite que especialistas, cientistas e fabricantes conheçam os recentes avanços tecnológicos obtidos nessa área. Essa lista é conhecida como **Top500** e pode ser acessada nesse [link](https://www.top500.org/). 
 
-### Motivação
-Mais do que um relatório sobre equipamentos e dispositivos, a Top500 indica quais são as tecnologias que estão na vanguarda da computação mundial. Além disso, indicam, mesmo que indiretamente, trelados aos avanços obtidos nas mais diversas áreas científicas. 
+Mais do que um relatório sobre equipamentos e dispositivos, a Top500 indica quais são as tecnologias que estão na **vanguarda** da computação mundial, além de revelar o **posicionamento geopolítico** das nações em relação aos investimentos em **pesquisa científica**. De fato, como dito anteriormente, a evolução da pesquisa e desenvolvimento em algumas áreas está diretamente relacionada ao poder computacional disponível para resolver, em tempo hábil, problemas complexos.
 
-Atualmente, a Top500 possui um total de 56 edições que foram publicadas ao longo desses 27 anos. Observar tendências, fazer previsões a respeito do poder computacional, identificar correlações, posicionamento geopolítico no contexto da tecnologia computacional. 
+### Motivação
+Atualmente, a lista Top500 conta com um total de 56 edições que foram publicadas ao longo desses seus 27 anos de existência. As informações a respeito dos 28000 supercomputadores presentes nessa lista podem revelar questões interessantes como a evolução do posicionamento geopolítico dos países em relação à pesquisa e desenvolvimento, as tendências relacionadas às tecnologias de interconexão e processamento, adoção de dispositivos específicos para aceleração, inclinação ao uso de arquiteturas abertas ou proprietárias, mudanças nos paradigmas e técnicas empregadas nessa área, dentre vários outros aspectos. 
+
+Além disso, pode-se investigar quais são os fatores que apresentam maior correlação com o desempenho obtido pelos supercomputadores, e se essa relação sofreu alguma alteração ao longo do tempo. 
 
 ### Objetivos
 
+Para responder todas estas questões, este trabalho tem a finalidade de realizar a extração, exploração e análise de dados de todos os supercomputadores listados na Top500 em todas as suas edições. 
 
 ### Extração
 
-web scraping do site tal, de tal jeito. Excel, token, 
+Os dados foram coletados diretamente do site [Top500](www.top500.org). Para isso, foi necessário implementar um programa que permitisse automatizar o download das 56 listas que estão disponíveis em arquivos no formato Excel. Como o acesso aos arquivos login, esse programa web scraping token. 
 
-os dados são salvos em um arquivo csv 
+Todos os dados foram armazenados em um único arquivo CSV. 
 
 Mas há inconsistências. Foi preciso fazer ajustes manuais. 
 
 ### Visão Geral
 
 54 listas, de 1993 a 2020
-Total de 2800 registros
+Total de 28000 registros
 Atributos:
 
 
