@@ -10,9 +10,6 @@
 
 Trabalho apresentado ao curso [BI MASTER](https://ica.puc-rio.ai/bi-master) como pré-requisito para conclusão de curso e obtenção de crédito na disciplina "Projetos de Sistemas Inteligentes de Apoio à Decisão".
 
-- [Link para o código](https://github.com/link_do_repositorio/nome_do_arquivo_de_codigo). <!-- caso não aplicável, remover esta linha -->
-
-
 ---
 
 ### Resumo
@@ -57,13 +54,13 @@ Inicialmente, a ideia era fazer um carregamento automático dos dados, ou seja, 
 
 ### Visão Geral dos Dados
 
-Composição:
+**Composição:**
 - Listas: 56
 - Período: 1993 a 2020
 - Registros: 28000
 - Atributos: 53
 
-Descrição dos atributos:
+**Descrição dos atributos:**
 - Rank: posição na lista
 - Site: local em que o supercomputador está instalado 
 - Manufacturer: fabricante
@@ -91,7 +88,7 @@ Vale ressaltar que esses atributos não estão disponíveis para todos os regist
 
 ### Análise 
 
-#### As nações e o seu posicionamento geopolítico em supercomputação
+#### Posicionamento geopolítico das nações no contexto da supercomputação
 
 Para avaliar a representatividade das nações no contexto da supercomputação, foi apurado, para cada país, o total de supercomputadores que ocuparam alguma posição no Top500, considerando todas as 56 listas publicadas até hoje. O gráfico abaixo mostra esse quantitativo de ocorrências no Top500 por país. Uma versão interativa desse mapa pode ser acessada [aqui](codigo/html/ocorrencias_por_pais_mapa.html).
 
