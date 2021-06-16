@@ -65,40 +65,38 @@ Composição:
 
 Descrição dos atributos:
 - Rank: posição na lista
-- Site: 
-- Manufacturer
-- Computer
-- Country
-- Year
-- Total Cores
-- RMax
-- RPeak
-- Processor Technology
-- Processor
-- System Family
-- Operating System
-- Segment
-- Application Area
-- Interconnect Family
-- Interconnect
-- Region
-- Continent
-- List
-- Power
-- Accelerator
+- Site: local em que o supercomputador está instalado 
+- Manufacturer: fabricante
+- Computer: nome ou modelo 
+- Country: país
+- Total Cores: quantidade total de núcleos de processamento
+- RMax: desempenho máximo teórico em teraflops
+- RPeak: desempenho máximo alcançado em teraflops
+- Processor Technology: tecnologia do processador
+- Processor: nome do processador
+- System Family: modelo do sistema
+- Operating System: sistema operacional
+- Segment: área
+- Application Area: área
+- Interconnect Family: interconexão
+- Interconnect: interconexão
+- List: lista 
+- Power: potência
+- Accelerator: acelerador 
 - Name
-- Efficiency
-- Power Source
-- Power Efficiency
+- Efficiency: eficiência
+- Power Efficiency: eficiência energética
 
-exemplo: tianhe2
-
-Nem todos os registros possuem dados para todos esses atributos. Isso acontece, pois muitos atributos foram incluídos somente a partir de um ano. 
+Vale ressaltar que esses atributos não estão disponíveis para todos os registros do conjunto de dados, já que algumas dessas informações foram introduzidas somente a partir de um determinado período. 
 
 ### Análise 
 
 #### As nações e o seu posicionamento geopolítico em supercomputação
 
+Para avaliar a representatividade das nações no contexto da supercomputação, foi apurado, para cada país, o total de supercomputadores que ocuparam alguma posição no Top500, considerando todas as 56 listas publicadas até hoje. O gráfico abaixo mostra um mapa 
+
+
+![a](codigo/figuras/ocorrencias_por_pais_mapa.svg)
 
 
 #### Fabricantes
