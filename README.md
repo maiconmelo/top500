@@ -93,16 +93,24 @@ Vale ressaltar que esses atributos não estão disponíveis para todos os regist
 
 #### As nações e o seu posicionamento geopolítico em supercomputação
 
-Para avaliar a representatividade das nações no contexto da supercomputação, foi apurado, para cada país, o total de supercomputadores que ocuparam alguma posição no Top500, considerando todas as 56 listas publicadas até hoje. O gráfico abaixo mostra esse quantitativo por país. O mapa interativo pode ser visto nesse link.
-
+Para avaliar a representatividade das nações no contexto da supercomputação, foi apurado, para cada país, o total de supercomputadores que ocuparam alguma posição no Top500, considerando todas as 56 listas publicadas até hoje. O gráfico abaixo mostra esse quantitativo de ocorrências no Top500 por país. Uma versão interativa desse mapa pode ser acessada [aqui](codigo/html/ocorrencias_por_pais_mapa.html).
 
 ![a](codigo/figuras/ocorrencias_por_pais_mapa.svg)
 
-A partir das informações exibidas nessa imagem, pode-se constatar o seguinte: 
+Ao analisar esse mapa, pode-se constatar o seguinte: 
 
-- Todos os continentes tiveram algum representante
-- Na américa latina, o Brasil se destaca dentre os demais países
-- Os EUA despontam
+- Todos os continentes tiveram algum país figurando em alguma das 56 listas avaliadas. 
+- Na américa latina, o Brasil se destaca dentre os demais países. 
+- Os EUA despontam como a nação que mais figurou no Top500, com mais de 13 mil ocorrências ao longo desses anos. 
+- A China é o segundo país com mais ocorrências (aproximadamente 3 mil), embora esteja bem distante dos EUA. 
+
+Esses dados mostram a representatividade das nações no Top500 considerando o total de ocorrências na lista. Contudo, pode ser que tenha acontecido alguma variação, ao longo do tempo, da participação desses países no Top500. Em outras palavras, uma nação pode ter aprensentado uma certa constância em sua participação, enquanto que outras podem ter aumentado ou diminuído sua representatividade desde o início da lista até os dias atuais. A fim de investigar essa questão, a figura abaixo apresenta um gráfico *boxplot* dos países em que a mediana de ocorrências no Top500 foi maior do que 1. 
+
+![a](codigo/figuras/countries_summary.svg)
+
+A amplitude interquartil (diferença entre o primeiro e terceiro quartis) mostra que a variação de ocorrências no Top500 é muito pequena para a grande maioria dos países. De fato, tomando o Brasil como exemplo, pode-se const
+
+é maior para o seguintes países: EUA, China, Japão, Alemanha e Reino Unido. Nos demais, a variação é muito pequena. De fato, tomando o Brasil como exemplo, pode-se ver que, em média, esse países 
 
 
 
