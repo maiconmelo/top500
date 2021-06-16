@@ -12,12 +12,12 @@ import plotly.express as px
 
 def line(data, x, y, color, labels, title):
     
-    fig = px.line(data, x=x, y=y, title=title, labels=labels, color=color, height=800, width=600)
+    fig = px.line(data, x=x, y=y, title=title, labels=labels, color=color, height=600, width=800)
     fig.update_yaxes(range=[0,100])
     return fig
 
 def boxplot(data, x, y, labels, title):
-    fig = px.box(data, x=x, y=y, title=title, points=False, labels=labels, height=1000, width=1200)
+    fig = px.box(data, x=x, y=y, title=title, points=False, labels=labels, height=600, width=800)
     
     return fig
 
@@ -42,8 +42,8 @@ def geo_map(positions, data, label, title, legend):
 
     fig.update_layout(
         autosize=False, 
-        height=1000, 
-        width=1200,
+        height=600, 
+        width=800,
         title_text=title,
         geo=dict(
             showframe=False,
