@@ -40,6 +40,9 @@ def geo_map(positions, data, label, title, legend):
     ))
 
     fig.update_layout(
+        autosize=False, 
+        height=1000, 
+        width=1200,
         title_text=title,
         geo=dict(
             showframe=False,
@@ -48,7 +51,6 @@ def geo_map(positions, data, label, title, legend):
         ),
        
     )   
-
 
 
 

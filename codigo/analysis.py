@@ -56,7 +56,7 @@ def countries_historic_presence(df_top500):
     fig = plot.geo_map(df['Code'], 
                        df['Occurrences'], 
                        df.index, 
-                       'TOP500 - Ocorrências por país', 
+                       'Total ocorrências no TOP500 por país', 
                        'Ocorrências' 
     )
     fig.write_html("html/ocorrencias_por_pais_mapa.html")
