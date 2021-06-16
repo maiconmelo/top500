@@ -55,20 +55,41 @@ Após realizar a autenticação do usuário, o programa executa o download e lei
 
 Inicialmente, a ideia era fazer um carregamento automático dos dados, ou seja, o programa efetuaria, automaticamente, tanto o download quanto leitura das informações, sem que fosse necessário realizar nenhum processamento manual dessas informações. Contudo, não foi possível implementar tal abordagem, pois há uma série de inconsistências entre grupos de arquivos. Diante disso, foi preciso realizar alguns ajustes manuais a fim de tornar o dado mais confiável, coerente e legível. 
 
-### Visão Geral
+### Visão Geral dos Dados
 
-Composição dos dados:
-- Total de listas: 56
+Composição:
+- Listas: 56
 - Período: 1993 a 2020
-- Total de registros: 28000
+- Registros: 28000
+- Atributos: 53
 
-Atributos: 
-'Rank', 'Site', 'Manufacturer', 'Computer', 'Country', 'Year',
-       'Total Cores', 'RMax', 'RPeak', 'Processor Technology', 'Processor',
-       'System Family', 'Operating System', 'Segment', 'Application Area',
-       'Interconnect Family', 'Interconnect', 'Region', 'Continent', 'List',
-       'Power', 'Accelerator', 'Name', 'Efficiency', 'Power Source',
-       'Power Efficiency'
+Descrição dos atributos:
+- Rank: posição na lista
+- Site: 
+- Manufacturer
+- Computer
+- Country
+- Year
+- Total Cores
+- RMax
+- RPeak
+- Processor Technology
+- Processor
+- System Family
+- Operating System
+- Segment
+- Application Area
+- Interconnect Family
+- Interconnect
+- Region
+- Continent
+- List
+- Power
+- Accelerator
+- Name
+- Efficiency
+- Power Source
+- Power Efficiency
 
 exemplo: tianhe2
 
