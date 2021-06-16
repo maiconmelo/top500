@@ -29,6 +29,19 @@ def countries_summary(df_top500):
     fig.write_html("html/countries_summary.html")
 
 
+def individual_evolution(df_top500, country):
+    df = df_top500.groupby('List')['Country'].value_counts()
+    df = df.reset_index(name="Occurrences")
+    df = df[df['Country'] == country]
+    
+    labels = {"Country": "Países", "Occurrences":"Ocorrências", 'List':'Lista publicada'}   
+    fig = plot.line(df, 'List', 'Occurrences', 'Country', labels, "Participação dos países no Top500" )
+    
+    
+    fig.write_image(f"figuras/{country}_evolution.svg")
+    fig.write_html(f"html/{country}_evolution.html")
+
+
 def countries_evolution(df_top500):
     df = df_top500.groupby('List')['Country'].value_counts()
     df = df.reset_index(name="Occurrences")
@@ -37,7 +50,9 @@ def countries_evolution(df_top500):
     for country in ds.index:
         df = df[df['Country'] != country]
    
-    fig = plot.line(df, 'List', 'Occurrences', 'Country')
+    
+    labels = {"Country": "Países", "Occurrences":"Ocorrências", 'List':'Lista publicada'}   
+    fig = plot.line(df, 'List', 'Occurrences', 'Country', labels, "Participação dos países no Top500" )
     
     fig.write_image("figuras/countries_evolution.svg")
     fig.write_html("html/countries_evolution.html")
@@ -93,6 +108,7 @@ def countries(df_top500):
     countries_nowadays_presence(df_top500)
     countries_presence_top5(df_top500)
     countries_summary(df_top500)
+    individual_evolution(df_top500, 'Brazil')
     
     
     
