@@ -112,7 +112,7 @@ A amplitude interquartil (diferença entre o primeiro e terceiro quartis) mostra
 
 é maior para o seguintes países: EUA, China, Japão, Alemanha e Reino Unido. Nos demais, a variação é muito pequena. De fato, tomando o Brasil como exemplo, pode-se ver que, em média, esse países 
 
-
+![a](codigo/figuras/Brazil_evolution.svg)
 
 
 #### Fabricantes
