@@ -93,10 +93,17 @@ Vale ressaltar que esses atributos não estão disponíveis para todos os regist
 
 #### As nações e o seu posicionamento geopolítico em supercomputação
 
-Para avaliar a representatividade das nações no contexto da supercomputação, foi apurado, para cada país, o total de supercomputadores que ocuparam alguma posição no Top500, considerando todas as 56 listas publicadas até hoje. O gráfico abaixo mostra um mapa 
+Para avaliar a representatividade das nações no contexto da supercomputação, foi apurado, para cada país, o total de supercomputadores que ocuparam alguma posição no Top500, considerando todas as 56 listas publicadas até hoje. O gráfico abaixo mostra um mapa . O mapa interativo pode ser visto nesse link.
 
 
 ![a](codigo/figuras/ocorrencias_por_pais_mapa.svg)
+
+A partir das informações exibidas nessa imagem, pode-se constatar o seguinte: 
+
+- Todos os continentes
+- Europa
+- América latina é o brasil
+- EUA e China
 
 
 #### Fabricantes
