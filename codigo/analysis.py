@@ -22,7 +22,8 @@ def countries_summary(df_top500):
         df = df[df['Country'] != country]
         
    
-    fig = plot.boxplot(df, 'Country', 'Occurrences')
+    labels = {"Country": "Países", "Occurrences":"Ocorrências"}
+    fig = plot.boxplot(df, 'Country', 'Occurrences', labels, "Ocorrências no Top500")
     
     fig.write_image("figuras/countries_summary.svg")
     fig.write_html("html/countries_summary.html")

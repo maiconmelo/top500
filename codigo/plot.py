@@ -11,12 +11,13 @@ import plotly.express as px
 
 
 def line(data, x, y, color):
+    
     fig = px.line(data, x=x, y=y, color=color, height=1000, width=1200)
     
     return fig
 
-def boxplot(data, x, y):
-    fig = px.box(data, x=x, y=y, points=False)
+def boxplot(data, x, y, labels, title):
+    fig = px.box(data, x=x, y=y, title=title, points=False, labels=labels, height=1000, width=1200)
     
     return fig
 
