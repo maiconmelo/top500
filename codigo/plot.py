@@ -12,7 +12,7 @@ import plotly.express as px
 
 def line(data, x, y, color, labels, title):
     
-    fig = px.line(data, x=x, y=y, title=title, labels=labels, color=color, height=1000, width=1200)
+    fig = px.line(data, x=x, y=y, title=title, labels=labels, color=color, height=800, width=600)
     fig.update_yaxes(range=[0,100])
     return fig
 
