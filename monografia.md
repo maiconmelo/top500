@@ -36,12 +36,13 @@ Mais do que um relatório sobre equipamentos e dispositivos, a Top500 indica qua
 
 Por meio da extração, exploração e análise de dados dos supercomputadores listados em todas as edições no Top500, esse trabalho tem o objetivo de analisar e investigar os seguintes aspectos: 
 
-- Evolução do posicionamento geopolítico dos países em relação a supercomputação
+- Posicionamento geopolítico dos países em relação a supercomputação
+- Eficiência alcançada pelos supercomputadores
+
 - Tendências atuais relacionadas às tecnologias de interconexão e processamento
 - Adoção de dispositivos específicos para aceleração
 - Inclinação ao uso de arquiteturas abertas ou proprietárias
 - Mudanças nos paradigmas e técnicas empregadas nessa área
-- Fatores que apresentam maior correlação com o desempenho obtido pelos supercomputadores
 - Previsão para o rompimento da barreira de 1 Exaflop
 
 ### Extração
@@ -96,30 +97,36 @@ Para avaliar a representatividade das nações no contexto da supercomputação,
 
 Ao analisar esse mapa, pode-se constatar o seguinte: 
 
-- Todos os continentes tiveram algum país figurando em alguma das 56 listas avaliadas. 
-- Na américa latina, o Brasil se destaca dentre os demais países. 
-- Os EUA despontam como a nação que mais figurou no Top500, com mais de 13 mil ocorrências ao longo desses anos. 
-- A China é o segundo país com mais ocorrências (aproximadamente 3 mil), embora esteja bem distante dos EUA. 
+- **Todos os continentes** tiveram algum país representante em alguma das 56 listas avaliadas. 
+- Na américa latina, o **Brasil** se destaca entre os demais países. 
+- Os **EUA** despontam como a nação que mais figurou no Top500, com mais de 13 mil ocorrências ao longo desses anos. 
+- A **China** é o segundo país com mais ocorrências (aproximadamente 3 mil), embora esteja bem distante dos EUA. 
 
-Esses dados mostram a representatividade das nações no Top500 considerando o total de ocorrências na lista. Contudo, pode ser que tenha acontecido alguma variação, ao longo do tempo, da participação desses países no Top500. Em outras palavras, uma nação pode ter aprensentado uma certa constância em sua participação, enquanto que outras podem ter aumentado ou diminuído sua representatividade desde o início da lista até os dias atuais. A fim de investigar essa questão, a figura abaixo apresenta um gráfico *boxplot* dos países em que a mediana de ocorrências no Top500 foi maior do que 1. 
+Esses dados mostram a representatividade das nações no Top500 considerando o total de ocorrências na lista. Contudo, as nações podem ter aprensentado uma certa constância em sua participação ou então podem ter aumentado ou diminuído sua representatividade desde o início da lista até os dias atuais. A fim de investigar essa questão, a figura abaixo apresenta um gráfico *boxplot* dos países em que a mediana de ocorrências no Top500 foi maior do que 1. 
 
 ![a](codigo/figuras/countries_summary.svg)
 
-A amplitude interquartil (diferença entre o primeiro e terceiro quartis) mostra que a variação de ocorrências no Top500 é muito pequena para a grande maioria dos países. De fato, tomando o Brasil como exemplo, pode-se const
-
-é maior para o seguintes países: EUA, China, Japão, Alemanha e Reino Unido. Nos demais, a variação é muito pequena. De fato, tomando o Brasil como exemplo, pode-se ver que, em média, esse países 
+A amplitude interquartil (diferença entre o primeiro e terceiro quartis) mostra que a variação de ocorrências no Top500 é muito pequena para a grande maioria dos países. De fato, tomando o Brasil como exemplo, pode-se verificar que a variação em torno da mediana, que é igual a 2 ocorrências é realmente muito pequena, como pode ser visto nessa imagem: 
 
 ![a](codigo/figuras/Brazil_evolution.svg)
 
+Em contrapartida, a variação é bem maior para os EUA, China, Japão, Alemanha e Reino Unido. Entretanto, como pode ser observado na figura a seguir, a Alemanha e o Reino Unido apresentam uma variação bem menor do que os demais países desse subgrupo, indicando que suas partipações no Top500 foram quase que constantes ao longo do tempo. Já o Japão, por outro lado, apresentou um declínio que vai desde a primeira edição da lista até a edição publicada em 2008, apresentando, a partir daquele ano, uma participação mais constante e bem menos expressiva do que aquela que foi observada nos primeiros anos do Top500. 
 
-#### Fabricantes
-Nuvem de palavras
+![a](codigo/figuras/countries_evolution.svg)
+
+Algo interessante a se notar é a grande variação de participação dos EUA e China. Os EUA entraram em franco declínio em 2015, ao passo que a China aumentou significativamente sua participação também a partir daquele ano. Essa tendência de inversão se consolida após 2017, onde pode ser visto que a China passa a ter uma maior participação do que os EUA nas últimas 8 edições da lista. 
+
+Do ponto de vista geopolítico, 
 
 #### Interconexão
 
 #### Aceleradores
 
-#### Diferença entre maior e menor do rank
+#### Eficiência
+
+Eficiência média
+Correlação entre eficiencia e algum aspecto
+Há algum padrão?
 
 
 ### Quais fatores mais contribuem para um maior desempenho?
