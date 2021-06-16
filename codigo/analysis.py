@@ -45,7 +45,7 @@ def individual_evolution(df_top500, country):
 def countries_evolution(df_top500):
     df = df_top500.groupby('List')['Country'].value_counts()
     df = df.reset_index(name="Occurrences")
-    ds = df.groupby('Country').std() > 30
+    ds = df.groupby('Country').std() > 10
     ds = ds[ds['Occurrences'] == False]
     for country in ds.index:
         df = df[df['Country'] != country]

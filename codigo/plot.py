@@ -13,7 +13,7 @@ import plotly.express as px
 def line(data, x, y, color, labels, title):
     
     fig = px.line(data, x=x, y=y, title=title, labels=labels, color=color, height=600, width=800)
-    fig.update_yaxes(range=[0,100])
+    fig.update_yaxes(range=[0,500])
     return fig
 
 def boxplot(data, x, y, labels, title):
