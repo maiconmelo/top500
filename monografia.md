@@ -38,11 +38,6 @@ Por meio da extração, exploração e análise de dados dos supercomputadores l
 
 - Posicionamento geopolítico dos países em relação a supercomputação
 - Eficiência alcançada pelos supercomputadores
-
-- Tendências atuais relacionadas às tecnologias de interconexão e processamento
-- Adoção de dispositivos específicos para aceleração
-- Inclinação ao uso de arquiteturas abertas ou proprietárias
-- Mudanças nos paradigmas e técnicas empregadas nessa área
 - Previsão para o rompimento da barreira de 1 Exaflop
 
 ### Extração
@@ -117,14 +112,9 @@ Mais especificamente sobre o Brasil...
 
 
 ### Eficiência
-
-Eficiência média
-Correlação entre eficiencia e algum aspecto
-Há algum padrão?
+Quais fatores tem relação com a eficiência alcançada pelos supercomputadores?
 
 
-### Energia
-- Modelo de regressão para explicar 
 
 ### Previsão para Exaflop
 - Criar modelo de previsão de séries temporais
