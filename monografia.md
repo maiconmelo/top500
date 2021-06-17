@@ -63,9 +63,7 @@ Inicialmente, a ideia era fazer um carregamento automático dos dados, ou seja, 
 
 **Descrição dos atributos:**
 - Rank: posição na lista
-- Site: local em que o supercomputador está instalado 
 - Manufacturer: fabricante
-- Computer: nome ou modelo 
 - Country: país
 - Total Cores: quantidade total de núcleos de processamento
 - RMax: desempenho máximo teórico em teraflops
@@ -81,7 +79,6 @@ Inicialmente, a ideia era fazer um carregamento automático dos dados, ou seja, 
 - List: lista 
 - Power: potência
 - Accelerator: acelerador 
-- Name
 - Efficiency: eficiência
 - Power Efficiency: eficiência energética
 
