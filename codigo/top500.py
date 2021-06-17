@@ -14,25 +14,14 @@ import country_converter as cc
 
 ''' Functions '''
 
-def prepare_data(df_top500):
-    df_top500.List = df_top500.List.astype(str)
-    
-    #df_top500['Ranking Score'] = (500 - df_top500['Rank'] ) / (500 - 1)
-    
-    
-    
-    return df_top500
-
-    
+   
 ''' Main program '''
 def main():
      
     df_top500 = data.get_data()
     
-#    df_top500 = prepare_data(df_top500)
-    
-    #analysis.countries(df_top500)
-    analysis.efficiency(df_top500)
+    analysis.countries(df_top500)
+    #analysis.efficiency(df_top500)
     
     
     
