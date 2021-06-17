@@ -87,9 +87,7 @@ Inicialmente, a ideia era fazer um carregamento automático dos dados, ou seja, 
 
 Vale ressaltar que esses atributos não estão disponíveis para todos os registros do conjunto de dados, já que algumas dessas informações foram introduzidas somente a partir de um determinado período. 
 
-### Análise 
-
-#### Posicionamento geopolítico das nações no contexto da supercomputação
+### Posicionamento geopolítico das nações no contexto da supercomputação
 
 Para avaliar a representatividade das nações no contexto da supercomputação, foi apurado, para cada país, o total de supercomputadores que ocuparam alguma posição no Top500, considerando todas as 56 listas publicadas até hoje. O gráfico abaixo mostra esse quantitativo de ocorrências no Top500 por país. Uma versão interativa desse mapa pode ser acessada [aqui](codigo/html/ocorrencias_por_pais_mapa.html).
 
@@ -118,18 +116,17 @@ Algo interessante a se notar é a grande variação de participação dos EUA e 
 
 Do ponto de vista geopolítico, 
 
-#### Interconexão
+Mais especificamente sobre o Brasil...
 
-#### Aceleradores
 
-#### Eficiência
+### Eficiência
 
 Eficiência média
 Correlação entre eficiencia e algum aspecto
 Há algum padrão?
 
 
-### Quais fatores mais contribuem para um maior desempenho?
+### Energia
 - Modelo de regressão para explicar 
 
 ### Previsão para Exaflop
