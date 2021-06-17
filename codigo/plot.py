@@ -9,15 +9,25 @@ Created on Fri Jun 11 14:41:17 2021
 import plotly.graph_objects as go
 import plotly.express as px
 
-
-def line(data, x, y, color, labels, title):
+def scatter(x, y):
+    fig = go.Figure(data=go.Scatter(x=x,
+                    y=y,
+                    mode='markers',
+                    marker_color=y,
+                    text=x)) # hover text goes here
+    fig.update_yaxes(range=[0,100])
     
-    fig = px.line(data, x=x, y=y, title=title, labels=labels, color=color, height=600, width=800)
-    fig.update_yaxes(range=[0,500])
     return fig
 
-def boxplot(data, x, y, labels, title):
-    fig = px.box(data, x=x, y=y, title=title, points=False, labels=labels, height=600, width=800)
+def line(data, x, y, color, labels, title):
+    fig = px.line(data, x=x, y=y, title=title, labels=labels, color=color, height=600, width=800)
+    fig.update_yaxes(range=[0,500])
+
+    return fig
+
+def boxplot(data, x, y, labels, title, scale):
+    fig = px.box(data, x=x, y=y, title=title, points='suspectedoutliers', labels=labels, height=600, width=800)
+    fig.update_yaxes(range=scale)
     
     return fig
 
@@ -53,9 +63,4 @@ def geo_map(positions, data, label, title, legend):
        
     )   
 
-
-
     return fig
-    #fig.show()
-    #fig.write_image("fig1.svg", engine="kaleido")
-    #fig.write_html("top500.html")
