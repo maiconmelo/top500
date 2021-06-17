@@ -29,7 +29,14 @@ def countries_summary(df):
         
    
     labels = {"country": "Países", "occurrences":"Ocorrências"}
-    fig = plot.boxplot(df, 'country', 'occurrences', labels, "Ocorrências no Top500", [0,500])
+    fig = plot.boxplot(df, 
+                       'country', 
+                       'occurrences', 
+                       labels, 
+                       "Ocorrências no Top500", 
+                       [0,500], 
+                       False
+    )
     plot.save(fig, "countries_summary") 
     
    
@@ -80,7 +87,7 @@ def countries(df_top500):
     countries_evolution(df)
     countries_historic_presence(df)
     countries_summary(df)
-    individual_evolution(df, 'Brazil')
+    individual_evolution(df, 'Denmark')
     
 def eff(df_top500):
     df = df_top500.drop(df_top500[df_top500['Efficiency'] < 1].index)
@@ -91,12 +98,6 @@ def eff(df_top500):
             'Accelerator',
             'Efficiency']]
     
-    df = df.rename({'Processor Technology': 'processor_technology', 
-                    'Operating System': 'operating_system',
-                    'Interconnect Family': 'interconnect_family', 
-                    'Accelerator': 'accelerator', 
-                    'Efficiency': 'efficiency'},
-                    axis='columns')
     
     
     
@@ -105,44 +106,8 @@ def eff(df_top500):
     #fig.write_image("figuras/efficiency.svg")
     fig.write_html("html/efficiency_processortech.html") 
     
-    fig = plot.boxplot(df, 'operating_system', 'efficiency', labels, "Ocorrências no Top500", [0,100])
-    #fig.write_image("figuras/efficiency.svg")
-    fig.write_html("html/efficiency_operatingsystem.html") 
-    
-    fig = plot.boxplot(df, 'interconnect_family', 'efficiency', labels, "Ocorrências no Top500", [0,100])
-    #fig.write_image("figuras/efficiency.svg")
-    fig.write_html("html/efficiency_interconnectfamily.html") 
-    
-    fig = plot.boxplot(df, 'accelerator', 'efficiency', labels, "Ocorrências no Top500", [0,100])
-    #fig.write_image("figuras/efficiency.svg")
-    fig.write_html("html/efficiency_accelerator.html") 
 
 
-    model = ols('efficiency ~ C(processor_technology)', data=df).fit()
-    aov_table = sm.stats.anova_lm(model, typ=2)
-    anova_table(aov_table)
-    print(stats.shapiro(model.resid))
-    print(aov_table['PR(>F)'][0])
-    
-    model = ols('efficiency ~ C(operating_system)', data=df).fit()
-    aov_table = sm.stats.anova_lm(model, typ=2)
-    anova_table(aov_table)
-    print(stats.shapiro(model.resid))
-    print(aov_table['PR(>F)'][0])
-    
-    model = ols('efficiency ~ C(interconnect_family)', data=df).fit()
-    aov_table = sm.stats.anova_lm(model, typ=2)
-    anova_table(aov_table)
-    print(stats.shapiro(model.resid))
-    print(aov_table['PR(>F)'][0])
-    
-    model = ols('efficiency ~ C(accelerator)', data=df).fit()
-    aov_table = sm.stats.anova_lm(model, typ=2)
-    anova_table(aov_table)
-    print(stats.shapiro(model.resid))
-    print(aov_table['PR(>F)'][0])
-    
-    
 
     
 def efficiency(df_top500):

@@ -34,8 +34,8 @@ def line(data, x, y, color, labels, title):
 
     return fig
 
-def boxplot(data, x, y, labels, title, scale):
-    fig = px.box(data, x=x, y=y, title=title, points='all', labels=labels, height=600, width=800)
+def boxplot(data, x, y, labels, title, scale, points):
+    fig = px.box(data, x=x, y=y, title=title, points=points, labels=labels, height=600, width=800)
     fig.update_yaxes(range=scale)
     
     return fig
