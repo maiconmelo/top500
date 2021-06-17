@@ -98,7 +98,7 @@ Esses dados mostram a representatividade das nações no Top500 considerando o t
 
 A amplitude interquartil (diferença entre o primeiro e terceiro quartis) mostra que a variação de ocorrências no Top500 é muito pequena para a grande maioria dos países. De fato, tomando o Brasil como exemplo, pode-se verificar que a variação em torno da mediana, que é igual a 2 ocorrências é realmente muito pequena, como pode ser visto nessa imagem: 
 
-![a](codigo/figuras/estaticas/Brazil_evolution.svg)
+![a](codigo/figuras/estaticas/Denmark_evolution.svg)
 
 Em contrapartida, a variação é bem maior para os EUA, China, Japão, Alemanha e Reino Unido. Entretanto, como pode ser observado na figura a seguir, a Alemanha e o Reino Unido apresentam uma variação bem menor do que os demais países desse subgrupo, indicando que suas partipações no Top500 foram quase que constantes ao longo do tempo. Já o Japão, por outro lado, apresentou um declínio que vai desde a primeira edição da lista até a edição publicada em 2008, apresentando, a partir daquele ano, uma participação mais constante e bem menos expressiva do que aquela que foi observada nos primeiros anos do Top500. 
 
