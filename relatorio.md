@@ -122,9 +122,11 @@ Diferentemente do desempenho nominal, que tem crescido ao longo do tempo, a efic
 
 ![a](codigo/figuras/estaticas/eficiencia_historico.svg)
 
-A eficiência de um supercomputador depende de diversos fatores que variam desde a tecnologia de todo o aparato de hardware que compõe o equipamento até as pilhas de software utilizadas para gerenciar a máquina. Sendo assim, não é surpresa afirmar que não é plausível realizar uma investigação mais profunda sobre a eficiência dos supercomputadores a partir das informações resumidas que são disponibilizadas pelo Top500. Entretanto, 
+A eficiência de um supercomputador depende de diversos fatores que variam desde a tecnologia do hardware que compõe o equipamento até as pilhas de software utilizadas para gerenciar a máquina. Dessa forma, considerando apenas as informações resumidas que são disponibilizadas pelo Top500, não é plausível realizar uma investigação mais profunda sobre os fatores que influenciam a eficiência dos supercomputadores.
 
+Entretanto, como é de conhecimento da comunidade que atua nessa área, um dos fatores que pode afetar a eficiência de um supercomputador é a tecnologia da **rede de interconexão** utilizada para conectar os diversos servidores ou nós de processamento que compõem a máquina. Para analisar essa hipótese, foram estratificados os dados de eficiência e tecnologia de interconexão dos supercomputadores que listados  nas últimas duas edições mais recentes, ou seja, as listas de junho e novembro de 2020. O gráfico *boxplot* a seguir mostra a distribuição da eficiência em relação a tecnologia de interconexão desses supercomputadores.
 
+![a](codigo/figuras/estaticas/eficiencia_interconexao.svg)
 
 
 
