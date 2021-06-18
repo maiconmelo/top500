@@ -140,16 +140,16 @@ def history(df_analysis):
     df = df.drop(df[df.efficiency < 40].index)
     df.list = df.list.astype(str)
     
-    df = df.groupby('list').efficiency.mean()
+    df = df.groupby('list').efficiency.median()
     df = df.reset_index(name="efficiency")
     
-    labels = {"list": "Listas", "efficiency":"Eficiência média (%)"}   
+    labels = {"list": "Listas", "efficiency":"Eficiência mediana (%)"}   
     fig = plot.line(df, 
                     'list', 
                     'efficiency', 
                     None, 
                     labels, 
-                    "Participação dos países no Top500", 
+                    "Histórico de Eficiência no Top500", 
                     [0,100]
     )
     plot.save(fig, "eficiencia_historico") 
