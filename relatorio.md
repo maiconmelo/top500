@@ -100,11 +100,11 @@ A amplitude interquartil (diferença entre o primeiro e terceiro quartis) mostra
 
 ![a](codigo/figuras/estaticas/Denmark_evolucao.svg)
 
-Em contrapartida, observa-se uma variação muito maior para os EUA, China e Japão. Como pode ser visto na figura a seguir, o Japão apresentou um declínio que pode ser observado desde a sua primeira participação na lista até a edição publicada em 2008, apresentando, a partir daquele ano, uma participação mais constante e bem menos expressiva do que aquela que foi observada nos primeiros anos do Top500. 
+Em contrapartida, observa-se uma variação muito maior para os EUA, China e Japão. Como pode ser visto na figura a seguir, o Japão apresentou um declínio desde a sua primeira participação na lista até a edição publicada em 2008, apresentando, a partir daquele ano, uma participação mais constante e bem menos expressiva do que aquela que foi observada nos primeiros anos do Top500. 
 
 ![a](codigo/figuras/estaticas/paises_evolucao.svg)
 
-Algo interessante a se notar é a grande variação de participação dos EUA e China. Os EUA entraram em franco declínio em 2015, ao passo que a China aumentou significativamente sua participação também a partir daquele ano. Essa tendência de inversão se consolida após 2017, onde pode ser visto que a China passa a ter uma maior participação do que os EUA nas últimas 8 edições da lista. 
+Quanto aos EUA e China, o gráfico evidencia que os EUA entraram em franco declínio em 2015, ao passo que a China aumentou significativamente sua participação também a partir daquele ano. Essa tendência de inversão se consolida após 2017, onde a China passa a ter uma maior participação do que os EUA nas últimas 8 edições da lista. 
 
 Do ponto de vista geopolítico, 
 
