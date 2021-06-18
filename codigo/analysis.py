@@ -97,8 +97,8 @@ def countries_historic_presence(df_analysis):
     
 def interconnect(df_analysis):
     df = df_analysis.drop(df_analysis[df_analysis.efficiency > 100].index)
-    df = df.drop(df[df.efficiency < 40].index)
-    df = df[df.list >= 2015]
+    df = df.drop(df[df.efficiency <= 0].index)
+    df = df[df.list >= 2020]
     
     labels = {"interconnect_family": "Tecnologia de Interconexão",
               "efficiency":"Eficiência (%)"
@@ -108,7 +108,7 @@ def interconnect(df_analysis):
                        'interconnect_family', 
                        'efficiency', 
                        labels, 
-                       "Eficiência por Tecnologia de Interconexão",
+                       "Eficiência por Tecnologia de Interconexão (Listas 2020.06 e 2020.11)",
                        [0,100],
                        False
 
@@ -117,8 +117,10 @@ def interconnect(df_analysis):
 
 def processor(df_analysis):
     df = df_analysis.drop(df_analysis[df_analysis.efficiency > 100].index)
-    df = df.drop(df[df.efficiency < 40].index)
-    df = df[df.list >= 2015]
+    df = df.drop(df[df.efficiency <= 0].index)
+    df = df[df.list >= 2020]
+    
+   
     
     labels = {"processor_technology": "Tecnologia do Processador",
               "efficiency":"Eficiência (%)"
@@ -128,37 +130,34 @@ def processor(df_analysis):
                        'processor_technology', 
                        'efficiency', 
                        labels, 
-                       "Eficiência por Tecnologia do Processador",
+                       "Eficiência por Tecnologia do Processador (Listas 2020.06 e 2020.11)",
                        [0,100],
                        False
-
     )
     plot.save(fig, "eficiencia_processador")    
 
-def history(df_analysis):
+def variability(df_analysis):
     df = df_analysis.drop(df_analysis[df_analysis.efficiency > 100].index)
-    df = df.drop(df[df.efficiency < 40].index)
+    df = df.drop(df[df.efficiency <= 0].index)
+    df = df[df.list >= 2020]
+    
     df.list = df.list.astype(str)
-    
-    df = df.groupby('list').efficiency.median()
-    df = df.reset_index(name="efficiency")
-    
-    labels = {"list": "Listas", "efficiency":"Eficiência mediana (%)"}   
-    fig = plot.line(df, 
-                    'list', 
-                    'efficiency', 
-                    None, 
-                    labels, 
-                    "Histórico de Eficiência no Top500", 
-                    [0,100]
+    labels = {"list": "Listas", "efficiency":"Eficiência (%)"}   
+    fig = plot.boxplot(df, 
+                       'list', 
+                       'efficiency', 
+                       labels, 
+                       "Eficiência dos Supercomputadores no Top500",
+                       [0,100],
+                       "all"
     )
-    plot.save(fig, "eficiencia_historico") 
+    plot.save(fig, "eficiencia_variacao") 
     
     
 def efficiency(df_top500):  
     df_analysis = df_top500.copy()
     
-    history(df_analysis)
+    variability(df_analysis)
     interconnect(df_analysis)
     processor(df_analysis)
     

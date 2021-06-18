@@ -18,12 +18,12 @@ def save(fig, filename):
 
 
 
-def scatter(x, y):
-    fig = go.Figure(data=go.Scatter(x=x,
+def scatter(df, x, y, color):
+    fig = px.scatter(df,
+                    x=x,
                     y=y,
-                    mode='markers',
-                    marker_color=y,
-                    text=x)) # hover text goes here
+                    color=color
+    ) 
     fig.update_yaxes(range=[0,100])
     
     return fig

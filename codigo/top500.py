@@ -20,7 +20,7 @@ def main():
      
     df_top500 = data.get_data()
     
-    analysis.countries(df_top500)
+    #analysis.countries(df_top500)
     analysis.efficiency(df_top500)
     
     
