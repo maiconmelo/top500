@@ -3,7 +3,7 @@
 # Exploração e Análise de Dados dos Supercomputadores Listados no Top500
 
 #### Aluno: [Maicon Melo Alves](https://github.com/maiconmelo).
-#### Orientadora: [Evelyn Conceição Santos Batista](https://github.com/link_do_github).
+#### Orientadora: [Profa. Evelyn Conceição Santos Batista](https://github.com/evysb).
 
 
 ---
