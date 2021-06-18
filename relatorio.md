@@ -111,15 +111,23 @@ Do ponto de vista geopolítico,
 Mais especificamente sobre o Brasil...
 
 
-### Eficiência
-Quais fatores tem relação com a eficiência alcançada pelos supercomputadores?
+### Análise da eficiência dos supercomputadores
+A posição de um supercomputador no Top500 é determinada a partir do número de operações de ponto flutuante executadas por segundo (**FLOPS - Floating Point Operations per Second**). Portanto, quanto maior for esse número, maior será a posição ocupada pelo supercomputador nesse *ranking*. O supercomputador **Fugaku**, por exemplo, foi capaz de realizar, aproximadamente, 442 quadrilhões de operações de ponto flutuante por segundo, resultado que o fez ocupar a primeira posição na última lista divulgada pelo Top500 (novembro de 2020). 
+
+Embora o *ranking* seja determinado de acordo com o desempenho nominal dos supercomputadores, há também o interesse em avaliar o quão **eficientemente** o equipamento foi capaz de utilizar todos os seus recursos. Dessa forma, pode-se entender quais são os gargalos ou entraves que impedem que um supercomputador alcance seu desempenho máximo teórico. No contexto do Top500, a **eficiência** é calculada como a razão entre o desempenho nominal e o desempenho máximo teórico.  
+
+
+
+
+
+![a](codigo/figuras/estaticas/eficiencia_variacao.svg)
 
 
 
 ### Previsão para Exaflop
 - Criar modelo de previsão de séries temporais
 - Previsão para 1 exaflop aconteceria quando?
-
+- Será que daria para chutar a chance dos países de alcançar primeiro?
 
 
 
