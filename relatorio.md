@@ -124,9 +124,26 @@ Diferentemente do desempenho nominal, que tem crescido ao longo do tempo, a efic
 
 A eficiência de um supercomputador depende de diversos fatores que variam desde a tecnologia do hardware que compõe o equipamento até as pilhas de software utilizadas para gerenciar a máquina. Dessa forma, considerando apenas as informações resumidas que são disponibilizadas pelo Top500, não é plausível realizar uma investigação mais profunda sobre os fatores que influenciam a eficiência dos supercomputadores.
 
-Entretanto, como é de conhecimento da comunidade que atua nessa área, um dos fatores que pode afetar a eficiência de um supercomputador é a tecnologia da **rede de interconexão** utilizada para conectar os diversos servidores ou nós de processamento que compõem a máquina. Para analisar essa hipótese, foram estratificados os dados de eficiência e tecnologia de interconexão dos supercomputadores que listados  nas últimas duas edições mais recentes, ou seja, as listas de junho e novembro de 2020. O gráfico *boxplot* a seguir mostra a distribuição da eficiência em relação a tecnologia de interconexão desses supercomputadores.
+Entretanto, como é de conhecimento da comunidade que atua nessa área, um dos fatores que pode afetar a eficiência de um supercomputador é a tecnologia da **rede de interconexão** utilizada para conectar os diversos servidores ou nós de processamento que compõem a máquina. Para analisar essa hipótese, foram estratificados os dados de eficiência e tecnologia de interconexão dos supercomputadores listados  nas últimas duas edições publicadas pelo Top500, ou seja, as listas de junho e novembro de 2020. O gráfico a seguir mostra a distribuição da eficiência em relação a tecnologia de interconexão desses supercomputadores.
 
 ![a](codigo/figuras/estaticas/eficiencia_interconexao.svg)
+
+Esse gráfico mostra que a mediana da eficiência alcançada pelos supercomputadores que utilizam a rede **Gigabit Ethernet** (53,27%) é bem menor do que a eficiência medianda obtida por aqueles que usam uma **Proprietary Network** (84,75%). Contudo, essa diferença entre os valores médios de eficiência pode ser atribuída ao mero acaso, não indicando, assim, que exista alguma relação entre eficiência e a tecnologia da rede de interconexão. 
+
+Com a finalidade de investigar essa questão, foi executado o seguinte teste de hipótese: 
+
+Hipóteses:
+- H0: A eficiência média entre os supercomputadores que utilizam as redes Gigabit Ethernet e Proprietary Network são **iguais**. 
+- Ha: A eficiência média entre os supercomputadores que utilizam as redes Gigabit Ethernet e Proprietary Network são **diferentes**. 
+
+Para esse teste, foi aplicado o **teste T para amostras independentes** considerando uma significância estatística (alfa) igual a 0,05. Antes de executar o teste, foi verificar que as variâncias das amostras podem ser consideradas iguais, já que o valor-p do teste de Levene foi igual a 0.13145125235737942. 
+
+Resultado:
+- Estatística T: -4.415620821655465
+- Valor-p: 1.2235353129864692e-05
+
+
+
 
 
 
