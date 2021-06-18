@@ -19,8 +19,8 @@ from statsmodels.formula.api import ols
 
 
 
-def countries_summary(df):
-    df = df.groupby('list').country.value_counts()
+def countries_summary(df_analysis):
+    df = df_analysis.groupby('list').country.value_counts()
     df = df.reset_index(name="occurrences")
     ds = df.groupby('country').median() > 1
     ds = ds[ds.occurrences == False]
@@ -37,37 +37,51 @@ def countries_summary(df):
                        [0,500], 
                        False
     )
-    plot.save(fig, "countries_summary") 
+    plot.save(fig, "paises_resumo") 
     
    
 
-def individual_evolution(df, country):
-    df = df.groupby('list').country.value_counts()
+def individual_evolution(df_analysis, country):
+    df = df_analysis.groupby('list').country.value_counts()
     df = df.reset_index(name="occurrences")
     df = df[df.country == country]
     
     labels = {"country": "Países", "occurrences":"Ocorrências", 'list':'Lista publicada'}   
-    fig = plot.line(df, 'list', 'occurrences', 'country', labels, "Participação dos países no Top500" )
-    plot.save(fig, f"{country}_evolution") 
+    fig = plot.line(df, 
+                    'list', 
+                    'occurrences', 
+                    'country', 
+                    labels, 
+                    "Evolução da participação no Top500", 
+                    [0,100]
+    )
+    plot.save(fig, f"{country}_evolucao") 
     
 
-def countries_evolution(df):
-    df = df.groupby('list').country.value_counts()
+def countries_evolution(df_analysis):
+    df = df_analysis.groupby('list').country.value_counts()
     df = df.reset_index(name="occurrences")
-    ds = df.groupby('country').std() > 10
+    ds = df.groupby('country').std() > 20
     ds = ds[ds.occurrences == False]
     for country in ds.index:
         df = df[df.country != country]
    
     
     labels = {"country": "Países", "occurrences":"Ocorrências", 'list':'Lista publicada'}   
-    fig = plot.line(df, 'list', 'occurrences', 'country', labels, "Participação dos países no Top500" )
-    plot.save(fig, "countries_evolution")    
+    fig = plot.line(df, 
+                    'list', 
+                    'occurrences', 
+                    'country', 
+                    labels, 
+                    "Evolução da participação no Top500", 
+                    [0,500]
+    )
+    plot.save(fig, "paises_evolucao")    
 
 
 
-def countries_historic_presence(df):
-    ds = df.country.value_counts()
+def countries_historic_presence(df_analysis):
+    ds = df_analysis.country.value_counts()
     df = pd.DataFrame({'country':ds.index, 'occurrences':ds.values})
     df['code'] = cc.convert(df.country, to="ISO3")
     fig = plot.geo_map(df.code, 
@@ -80,38 +94,82 @@ def countries_historic_presence(df):
 
 
 
-def countries(df_top500):
-    df = df_top500.copy()
+    
+def interconnect(df_analysis):
+    df = df_analysis.drop(df_analysis[df_analysis.efficiency > 100].index)
+    df = df.drop(df[df.efficiency < 40].index)
+    df = df[df.list >= 2015]
+    
+    labels = {"interconnect_family": "Tecnologia de Interconexão",
+              "efficiency":"Eficiência (%)"
+    }
+   
+    fig = plot.boxplot(df, 
+                       'interconnect_family', 
+                       'efficiency', 
+                       labels, 
+                       "Eficiência por Tecnologia de Interconexão",
+                       [0,100],
+                       False
+
+    )
+    plot.save(fig, "eficiencia_interconexao")    
+
+def processor(df_analysis):
+    df = df_analysis.drop(df_analysis[df_analysis.efficiency > 100].index)
+    df = df.drop(df[df.efficiency < 40].index)
+    df = df[df.list >= 2015]
+    
+    labels = {"processor_technology": "Tecnologia do Processador",
+              "efficiency":"Eficiência (%)"
+    }
+   
+    fig = plot.boxplot(df, 
+                       'processor_technology', 
+                       'efficiency', 
+                       labels, 
+                       "Eficiência por Tecnologia do Processador",
+                       [0,100],
+                       False
+
+    )
+    plot.save(fig, "eficiencia_processador")    
+
+def history(df_analysis):
+    df = df_analysis.drop(df_analysis[df_analysis.efficiency > 100].index)
+    df = df.drop(df[df.efficiency < 40].index)
     df.list = df.list.astype(str)
+    
+    df = df.groupby('list').efficiency.mean()
+    df = df.reset_index(name="efficiency")
+    
+    labels = {"list": "Listas", "efficiency":"Eficiência média (%)"}   
+    fig = plot.line(df, 
+                    'list', 
+                    'efficiency', 
+                    None, 
+                    labels, 
+                    "Participação dos países no Top500", 
+                    [0,100]
+    )
+    plot.save(fig, "eficiencia_historico") 
+    
+    
+def efficiency(df_top500):  
+    df_analysis = df_top500.copy()
+    
+    history(df_analysis)
+    interconnect(df_analysis)
+    processor(df_analysis)
+    
+def countries(df_top500):
+    df_analysis = df_top500.copy()
+    df_analysis.list = df_analysis.list.astype(str)
 
-    countries_evolution(df)
-    countries_historic_presence(df)
-    countries_summary(df)
-    individual_evolution(df, 'Denmark')
-    
-def eff(df_top500):
-    df = df_top500.drop(df_top500[df_top500['Efficiency'] < 1].index)
-    df = df[df['List'] >= 2020]
-    df = df[['Processor Technology', 
-            'Operating System',
-            'Interconnect Family',
-            'Accelerator',
-            'Efficiency']]
-    
-    
-    
-    
-    labels = {"Processor Technology": "Países", "Efficiency":"Ocorrências"}
-    fig = plot.boxplot(df, 'processor_technology', 'efficiency', labels, "Ocorrências no Top500", [0,100])
-    #fig.write_image("figuras/efficiency.svg")
-    fig.write_html("html/efficiency_processortech.html") 
-    
-
-
-
-    
-def efficiency(df_top500):
-    eff(df_top500)
+    countries_evolution(df_analysis)
+    countries_historic_presence(df_analysis)
+    countries_summary(df_analysis)
+    individual_evolution(df_analysis, 'Denmark')
     
     
     

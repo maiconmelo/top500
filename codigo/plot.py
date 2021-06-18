@@ -28,9 +28,9 @@ def scatter(x, y):
     
     return fig
 
-def line(data, x, y, color, labels, title):
+def line(data, x, y, color, labels, title, range):
     fig = px.line(data, x=x, y=y, title=title, labels=labels, color=color, height=600, width=800)
-    fig.update_yaxes(range=[0,500])
+    fig.update_yaxes(range=range)
 
     return fig
 
