@@ -92,17 +92,17 @@ Ao analisar esse mapa, pode-se constatar o seguinte:
 - Os **EUA** despontam como a nação que mais figurou no Top500, com mais de 13 mil ocorrências ao longo desses anos. 
 - A **China** é o segundo país com mais ocorrências (aproximadamente 3 mil), embora esteja bem distante dos EUA. 
 
-Esses dados mostram a representatividade das nações no Top500 considerando o total de ocorrências na lista. Contudo, as nações podem ter aprensentado uma certa constância em sua participação ou então podem ter aumentado ou diminuído sua representatividade desde o início da lista até os dias atuais. A fim de investigar essa questão, a figura abaixo apresenta um gráfico *boxplot* dos países em que a mediana de ocorrências no Top500 foi maior do que 1. 
+Esses dados mostram a representatividade das nações no Top500 considerando o total de ocorrências na lista. Contudo, as nações podem ter apresentado alguma variação em sua representatividade desde o início da lista até os dias atuais. A fim de investigar essa questão, a figura abaixo apresenta um gráfico *boxplot* dos países em que a mediana de ocorrências no Top500 foi maior do que 1. 
 
-![a](codigo/figuras/estaticas/countries_summary.svg)
+![a](codigo/figuras/estaticas/paises_resumo.svg)
 
-A amplitude interquartil (diferença entre o primeiro e terceiro quartis) mostra que a variação de ocorrências no Top500 é muito pequena para a grande maioria dos países. De fato, tomando o Brasil como exemplo, pode-se verificar que a variação em torno da mediana, que é igual a 2 ocorrências é realmente muito pequena, como pode ser visto nessa imagem: 
+A amplitude interquartil (diferença entre o primeiro e terceiro quartis) mostra que a variação de ocorrências no Top500 é muito pequena para a grande maioria dos países. De fato, tomando a Dinamarca como exemplo, pode-se verificar que a variação em torno da mediana - que é igual a 2 ocorrências - realmente é quase inexistente, como pode ser visto nessa imagem: 
 
-![a](codigo/figuras/estaticas/Denmark_evolution.svg)
+![a](codigo/figuras/estaticas/Denmark_evolucao.svg)
 
-Em contrapartida, a variação é bem maior para os EUA, China, Japão, Alemanha e Reino Unido. Entretanto, como pode ser observado na figura a seguir, a Alemanha e o Reino Unido apresentam uma variação bem menor do que os demais países desse subgrupo, indicando que suas partipações no Top500 foram quase que constantes ao longo do tempo. Já o Japão, por outro lado, apresentou um declínio que vai desde a primeira edição da lista até a edição publicada em 2008, apresentando, a partir daquele ano, uma participação mais constante e bem menos expressiva do que aquela que foi observada nos primeiros anos do Top500. 
+Em contrapartida, observa-se uma variação muito maior para os EUA, China e Japão. Como pode ser visto na figura a seguir, o Japão apresentou um declínio que pode ser observado desde a sua primeira participação na lista até a edição publicada em 2008, apresentando, a partir daquele ano, uma participação mais constante e bem menos expressiva do que aquela que foi observada nos primeiros anos do Top500. 
 
-![a](codigo/figuras/estaticas/countries_evolution.svg)
+![a](codigo/figuras/estaticas/paises_evolucao.svg)
 
 Algo interessante a se notar é a grande variação de participação dos EUA e China. Os EUA entraram em franco declínio em 2015, ao passo que a China aumentou significativamente sua participação também a partir daquele ano. Essa tendência de inversão se consolida após 2017, onde pode ser visto que a China passa a ter uma maior participação do que os EUA nas últimas 8 edições da lista. 
 
