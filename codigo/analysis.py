@@ -136,6 +136,45 @@ def processor(df_analysis):
     )
     plot.save(fig, "eficiencia_processador")    
 
+
+
+def historic_rmax(df_analysis):
+    #df = df_analysis.drop(df_analysis[df_analysis.efficiency > 100].index)
+    #df = df.drop(df[df.efficiency <= 0].index)
+    df = df_analysis[df_analysis['rank'] == 1]
+    df.list = df.list.astype(str)
+    
+    labels = {"list": "Listas", "rmax":"Desempenho (TFlops)"}   
+    fig = plot.line(df, 
+                    'list', 
+                    'rmax', 
+                    None, 
+                    labels, 
+                    "Desempenho Máximo dos Supercomputadores no Top500", 
+                    [0,500000]
+    )
+    plot.save(fig, "desempenho_historico") 
+
+
+def historic(df_analysis):
+    df = df_analysis.drop(df_analysis[df_analysis.efficiency > 100].index)
+    df = df.drop(df[df.efficiency <= 0].index)
+    df.list = df.list.astype(str)
+    df = df.groupby('list').efficiency.mean()
+    df = df.reset_index(name="efficiency")
+    
+    labels = {"list": "Listas", "efficiency":"Eficiência média (%)"}   
+    fig = plot.line(df, 
+                    'list', 
+                    'efficiency', 
+                    None, 
+                    labels, 
+                    "Eficiência Média dos Supercomputadores no Top500", 
+                    [0,100]
+    )
+    plot.save(fig, "eficiencia_historico") 
+
+
 def variability(df_analysis):
     df = df_analysis.drop(df_analysis[df_analysis.efficiency > 100].index)
     df = df.drop(df[df.efficiency <= 0].index)
@@ -157,6 +196,8 @@ def variability(df_analysis):
 def efficiency(df_top500):  
     df_analysis = df_top500.copy()
     
+    historic(df_analysis)
+    historic_rmax(df_analysis)
     variability(df_analysis)
     interconnect(df_analysis)
     processor(df_analysis)
