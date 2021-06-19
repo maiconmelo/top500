@@ -93,7 +93,35 @@ def countries_historic_presence(df_analysis):
     plot.save(fig, "mapa_ocorrencias")    
 
 
+def interconnect_hypotesis_test(df_analysis):
+    df = df_analysis.drop(df_analysis[df_analysis.efficiency > 100].index)
+    df = df.drop(df[df.efficiency <= 0].index)
+    df = df[df.list >= 2020]
 
+    sample_a = df[df['interconnect_family'] == 'Gigabit Ethernet']
+    sample_b = df[df['interconnect_family'] == 'Infiniband']
+    
+    sample_a = sample_a[sample_a['processor_technology'] == 'Intel Skylake']
+    sample_b = sample_b[sample_b['processor_technology'] == 'Intel Skylake']
+    
+    sample_a = sample_a[sample_a['accelerator'] == 'None']
+    sample_b = sample_b[sample_b['accelerator'] == 'None']
+    
+    sample_a = sample_a.efficiency
+    sample_b = sample_b.efficiency
+    
+    print(sample_a.mean())
+    print(sample_b.mean())
+    
+    result = stats.levene(sample_a, sample_b)
+    print(result)
+    
+    equal_var = True
+    if result.pvalue < 0.05:
+        equal_var = False
+        
+    result = stats.ttest_ind(sample_a, sample_b, equal_var=equal_var) 
+    print(result)
     
 def interconnect(df_analysis):
     df = df_analysis.drop(df_analysis[df_analysis.efficiency > 100].index)
@@ -113,7 +141,9 @@ def interconnect(df_analysis):
                        False
 
     )
-    plot.save(fig, "eficiencia_interconexao")    
+    plot.save(fig, "eficiencia_interconexao")
+
+    
 
 def processor(df_analysis):
     df = df_analysis.drop(df_analysis[df_analysis.efficiency > 100].index)
@@ -201,6 +231,8 @@ def efficiency(df_top500):
     variability(df_analysis)
     interconnect(df_analysis)
     processor(df_analysis)
+    
+    interconnect_hypotesis_test(df_analysis)
     
 def countries(df_top500):
     df_analysis = df_top500.copy()
