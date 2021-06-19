@@ -24,7 +24,7 @@ Trabalho apresentado ao curso [BI MASTER](https://ica.puc-rio.ai/bi-master) como
 
 
 ### Introdução
-A **Computação de Alto Desempenho** (*High Performance Computing*) tem sido usada há decadas como um recurso fundamental para alavancar as pesquisas realizadas em áreas como biologia, física, química, estudos climáticos, exploração e produção de petróleo, economia, entre várias outras. Essas áreas possuem problemas complexos que, por demandarem alto poder computacional, só podem ser resolvidos em tempo razoável utilizando um **supercomputador**. Essencialmente, um supercomputador é um aglomerado de servidores interconectados por uma rede de comunicação de alta velocidade que trabalham em conjunto para resolver um dado problema. 
+A **Computação de Alto Desempenho** (*High Performance Computing* ou HPC) tem sido usada há decadas como um recurso fundamental para alavancar as pesquisas realizadas em áreas como biologia, física, química, estudos climáticos, exploração e produção de petróleo, economia, entre várias outras. Essas áreas possuem problemas complexos que, por demandarem alto poder computacional, só podem ser resolvidos em tempo razoável utilizando um **supercomputador**. Essencialmente, um supercomputador é um aglomerado de servidores interconectados por uma rede de comunicação de alta velocidade que trabalham em conjunto para resolver um dado problema. 
 
 Com os recentes avanços na área de Inteligência Artificial, a computação de alto desempenho também tem sido empregada no treinamento de complexos modelos de aprendizado profundo e por reforço. O processo de treinamento desses modelos exige uma alta demanda computacional, especialmente aqueles baseados em redes neurais convolucionais que são comumente utilizados para detectar padrões em imagens e vídeos. Por conta disso, a computação de alto desempenho, que antes era empregada apenas em grandes empresas ou institutos de pesquisa, tem despertado também o interesse em empresas de médio e pequeno porte que atuam nas mais diversas áreas. 
 
@@ -79,7 +79,7 @@ Inicialmente, a ideia era fazer um carregamento automático dos dados, ou seja, 
 
 Vale ressaltar que esses atributos não estão disponíveis para todos os registros do conjunto de dados, já que algumas dessas informações foram introduzidas somente a partir de um determinado período. 
 
-### Posicionamento geopolítico das nações no contexto da supercomputação
+### Posicionamento geopolítico 
 
 Para avaliar a representatividade das nações no contexto da supercomputação, foi apurado, para cada país, o total de supercomputadores que ocuparam alguma posição no Top500, considerando todas as 56 listas publicadas até hoje. O gráfico abaixo mostra esse quantitativo de ocorrências no Top500 por país. Uma versão interativa desse mapa pode ser acessada [aqui](codigo/html/ocorrencias_por_pais_mapa.html).
 
@@ -111,55 +111,65 @@ Do ponto de vista geopolítico,
 Mais especificamente sobre o Brasil...
 
 
-### Análise da eficiência dos supercomputadores
+### Eficiência dos supercomputadores
 A posição de um supercomputador no Top500 é determinada a partir do número de operações de ponto flutuante executadas por segundo (**FLOPS - Floating Point Operations per Second**). Portanto, quanto maior for esse número, maior será a posição ocupada pelo supercomputador nesse *ranking*. O supercomputador **Fugaku**, por exemplo, foi capaz de executar 442 quadrilhões de operações de ponto flutuante por segundo, resultado que o fez ocupar a primeira posição na última lista divulgada pelo Top500 (novembro de 2020). Como pode ser visto na imagem abaixo, **o desempenho nominal** dos supercomputadores tem crescido exponencialmente nesses últimos 27 anos. 
 
 ![a](codigo/figuras/estaticas/desempenho_historico.svg)
 
-Embora o *ranking* seja determinado de acordo com o desempenho nominal dos supercomputadores, há também o interesse em avaliar o quão **eficientemente** um equipamento é capaz de utilizar todos os seus recursos. Dessa forma, pode-se entender quais são os gargalos ou entraves que impedem que um supercomputador alcance seu desempenho máximo teórico. No contexto do Top500, a **eficiência** é calculada como a razão entre o desempenho **nominal** e o desempenho **máximo teórico**.  
+Embora o *ranking* seja determinado de acordo com o desempenho nominal dos supercomputadores, há também o interesse em avaliar o quão **eficientemente** um equipamento é capaz de utilizar todos os seus recursos de processamento. Dessa forma, pode-se entender quais são os gargalos ou entraves que impedem que um supercomputador alcance seu desempenho máximo teórico. No contexto do Top500, a **eficiência** é calculada como a razão entre o desempenho **nominal** e o desempenho **máximo teórico**.  
 
 Diferentemente do desempenho nominal, que tem crescido ao longo do tempo, a eficiência média tem se mantida estável, como pode ser visto na figura abaixo. Na verdade, ao analisar atentamente o gráfico, pode-se notar que a eficiência média tem apresentado um leve declínio a partir de 2015. De fato, em novembro de 2020 a eficiência média foi igual a 62,48% que é um valor bem próximo da mínima histórica de 61,55%. 
 
 ![a](codigo/figuras/estaticas/eficiencia_historico.svg)
 
-A eficiência de um supercomputador depende de diversos fatores que variam desde a tecnologia do hardware que compõe o equipamento até as pilhas de software utilizadas para gerenciar a máquina. Dessa forma, considerando apenas as informações resumidas que são disponibilizadas pelo Top500, não é plausível realizar uma investigação mais profunda sobre os fatores que influenciam a eficiência dos supercomputadores.
+A eficiência de um supercomputador depende de diversos fatores que variam desde a tecnologia do hardware que compõe o equipamento até as pilhas de software utilizadas para gerenciar a máquina. Dessa forma, considerando apenas as informações resumidas que são disponibilizadas pelo site, não é plausível realizar uma investigação mais profunda sobre os fatores que verdadeiramente influenciam a eficiência dos supercomputadores listados no Top500.
 
-Entretanto, como é de conhecimento da comunidade que atua nessa área, um dos fatores que pode afetar a eficiência de um supercomputador é a tecnologia da **rede de interconexão** utilizada para conectar os servidores que compõem a máquina. Para analisar essa hipótese, foram estratificados os dados de eficiência e tecnologia de interconexão dos supercomputadores listados nas últimas duas edições publicadas pelo Top500, ou seja, as listas de junho e novembro de 2020. 
+Entretanto, como é de conhecimento da comunidade de HPC, um dos fatores que mais contribuem para que um supercomputador alcance um bom desempenho é a **rede de interconexão** utilizada para conectar os seus servidores ou nós de processamento. Assim sendo, pode-se avaliar a hipótese de que a **eficiência obtida por um supercomputador listado no Top500 esteja relacionada a tecnologia da sua rede de interconexão**. 
+
+Para analisar essa hipótese, foram estratificados os dados de eficiência e tecnologia de interconexão dos supercomputadores listados nas últimas duas edições publicadas pelo Top500, ou seja, as listas de junho e novembro de 2020, como pode ser visto na figura abaixo. Optou-se por restringir esse conjunto de dados aos supercomputadores dessas duas listas para evitar que os testes estatísticos fossem influenciados por amostras que tivessem um númeroro muito grande de elementos. 
 
 ![a](codigo/figuras/estaticas/eficiencia_interconexao.svg)
 
 
-Dentre as tecnologias de interconexão utilizadas pelos supercomputadores dessas edições da lista, foram selecionadas as redes **Gigabit Ethernet** e **Infiniband** para avaliar essa questão. Essas redes foram escolhidas, pois apresentam diferentes médias de eficiência e um número de amostras não tão discrepante como para os outros casos. 
+Dentre as tecnologias de interconexão utilizadas pelos supercomputadores dessas edições da lista, foram selecionadas as redes **Gigabit Ethernet** e **Infiniband** para avaliar essa questão. Essas redes foram escolhidas, pois apresentam diferentes médias de eficiência e um número de elementos razolável, ao contrário, por exemplo, da rede **Proprietary Network** que possui apenas 14 elementos nessa amostra. 
 
-Com a finalidade de amenizar os efeitos que outros fatores poderiam incutir na eficiência, os supercomputadores que utilizam essas duas redes foram filtrados de forma que utilizassem a mesma tecnologia do processador e nenhuma adoção de aceleradores
+Com a finalidade de amenizar os efeitos que outros fatores poderiam incutir na eficiência, os supercomputadores que utilizam essas duas redes foram filtrados de forma que utilizassem a mesma tecnologia do processador. Coincidentemente, em ambos os casos, a tecnologia de processador mais utilizada é exatamente a mesma: **Intel Skylake**. Além de igualar a tecnologia do processador, foram selecionados apenas os supercomputadores que não fossem dotados de dispositivos aceleradores. 
 
-Para verificar se essa diferença não estaria relacionada ao mero acaso, foi conduzido o  teste de hipótese descrito a seguir: 
+Após todo esse processo, as seguintes amostras foram selecionadas: 
 
-Amostra A: 
-- Tamanho: 
-- Média:
-- Mediana:
-- Desvio Padrão: 
+**Amostras:**
 
-Amostra B: 
-- Tamanho: 
-- Média:
-- Mediana:
-- Desvio Padrão: 
+Gigabit Ethernet: 
+- Tamanho: 159
+- Média: 47,79
+- Mediana: 51,34
+- Máximo: 60,34
+- Mínimo: 22,81
+- Desvio Padrão: 10,52
 
-Hipóteses:
+Infiniband: 
+- Tamanho: 41
+- Média: 59,60
+- Mediana: 62,3
+- Máximo: 67,65
+- Mínimo: 4,97
+- Desvio Padrão: 13,03
+
+**Hipóteses:**
 - H0: A eficiência média entre os supercomputadores que utilizam as redes Gigabit Ethernet e Infiniband são **iguais**. 
 - Ha: A eficiência média entre os supercomputadores que utilizam as redes Gigabit Ethernet e Infiniband são **diferentes**. 
 
-Para esse teste, foi aplicado o **teste T para amostras independentes** considerando uma significância estatística (alfa) de 5%. Antes de executar o teste, foi verificado que as variâncias das amostras podem ser consideradas iguais, já que o valor-p do teste de Levene foi igual a 0.13145125235737942. 
+**Tipo de teste:**
+Para testar essas hipóteses, foi aplicado o **teste T para amostras independentes** considerando uma significância estatística (alfa) de 5%. Antes de executar o teste, foi verificado que as variâncias das amostras podem ser consideradas iguais, já que o valor-p do teste de **Levene** foi igual a 0,44445406530667875, ou seja, maior do que 0,05. 
 
-Resultado:
-- Estatística T: -4.415620821655465
-- Valor-p: 1.2235353129864692e-05
+**Resultado:**
+- Estatística T: -6,090534920203153
+- Valor-p: 5,7536463876960684e-09
 
-O teste de hipótese permitiu concluir que, com um nível de significância estatística de 5%, há indícios suficientes para refutar a hipótese de que a eficiência média dos supercomputadores que utilizam as redes Gigabit Ethernet e Infiniband sejam iguais. Sendo assim, é possível afirmar que, para o contexto descrito nesse trabalho, há diferença entre a eficiência média dos supercompumédias de jogos ganhos dentro e fora de casa, indicando que o número de jogos ganhos dentro de casa é, em média, maior do que a quantidade de jogos vencidos fora de casa.
+**Interpretação:**
+O teste de hipótese permitiu concluir que, com um nível de significância estatística de 5%, há indícios suficientes para refutar a hipótese de que a eficiência média dos supercomputadores que utilizam as redes Gigabit Ethernet e Infiniband sejam iguais. Sendo assim, é possível afirmar que, para o contexto descrito nesse trabalho, os supercomputadores que utilizam a rede Infiniband foram capazes de obter uma maior eficiência média dos que utilizam a rede Gigabit Ethernet. 
 
-Naturalmente, essa análise deve ser vista como mais um indício que corrobora com 
+Naturalmente, essa análise deve ser vista como mais um indício que corrobora com o entendimento geral de que as redes de interconexão são parte fundamental de um supercomputador
 
 
 
