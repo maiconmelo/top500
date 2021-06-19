@@ -36,17 +36,18 @@ Mais do que um relatório sobre equipamentos e dispositivos, a Top500 indica qua
 
 Por meio da extração, exploração e análise de dados dos supercomputadores listados em todas as edições no Top500, esse trabalho tem o objetivo de analisar e investigar os seguintes aspectos: 
 
-- Posicionamento geopolítico dos países em relação a supercomputação
-- Eficiência alcançada pelos supercomputadores
-- Previsão para o rompimento da barreira de 1 Exaflop
+- Posicionamento geopolítico dos países no contexto da computação de alto desempenho
+- Relação entre eficiência alcançada pelos supercomputadores e sua rede de interconexão
+- Previsão para o possível rompimento da barreira de 1 Exaflop
 
 ### Extração
 
 Os dados foram coletados diretamente do site [Top500](www.top500.org) por meio de um programa especificamente criado para esse fim. Como os dados só podem ser acessados após a autenticação do usuário, foi preciso implementar algumas técnicas de *web scraping* a fim de identificar o *token* utilizado na autenticação. 
 
-Após realizar a autenticação do usuário, o programa executa o download e leitura de 56 arquivos no formato Excel, onde cada arquivo representa uma lista publicada pelo Top500. Todos esses dados foram armazenados em um único arquivo CSV para facilitar uma posterior análise. 
+Após realizar a autenticação do usuário, o programa é capaz de executar o download e leitura de 56 arquivos no formato Excel, onde cada arquivo representa uma lista publicada pelo Top500. Todos esses dados foram armazenados em um único arquivo CSV para facilitar uma posterior análise. 
 
-Inicialmente, a ideia era fazer um carregamento automático dos dados, ou seja, o programa efetuaria, automaticamente, tanto o download quanto leitura das informações, sem que fosse necessário realizar nenhum processamento manual dessas informações. Contudo, não foi possível implementar tal abordagem, pois há uma série de inconsistências entre grupos de arquivos. Diante disso, foi preciso realizar alguns ajustes manuais a fim de tornar o dado mais confiável, coerente e legível. 
+Como havia uma série de inconsistências entre grupos de arquivos, foi necessário realizar um pré-processamento manual nesses dados a fim de torná-los mais coerentes, legíveis e confiáveis. 
+
 
 ### Visão Geral dos Dados
 
@@ -54,28 +55,18 @@ Inicialmente, a ideia era fazer um carregamento automático dos dados, ou seja, 
 - Listas: 56
 - Período: 1993 a 2020
 - Registros: 28000
-- Atributos: 53
+- Atributos: 9
 
 **Descrição dos atributos:**
-- Rank: posição na lista
-- Manufacturer: fabricante
-- Country: país
-- Total Cores: quantidade total de núcleos de processamento
-- RMax: desempenho máximo teórico em teraflops
-- RPeak: desempenho máximo alcançado em teraflops
-- Processor Technology: tecnologia do processador
-- Processor: nome do processador
-- System Family: modelo do sistema
-- Operating System: sistema operacional
-- Segment: área
-- Application Area: área
-- Interconnect Family: interconexão
-- Interconnect: interconexão
-- List: lista 
-- Power: potência
-- Accelerator: acelerador 
-- Efficiency: eficiência
-- Power Efficiency: eficiência energética
+- `rank`: posição na lista
+- `country`: país
+- `rmax`: desempenho nominal em teraflops
+- `rpeak`: desempenho máximo teórico
+- `processor_technology`: tecnologia do processador
+- `interconnect_family`: tecnologia de interconexão
+- `list`: edição da lista 
+- `accelerator`: dispositivo acelerador 
+- `efficiency`: eficiência alcançada pelo supercomputador
 
 Vale ressaltar que esses atributos não estão disponíveis para todos os registros do conjunto de dados, já que algumas dessas informações foram introduzidas somente a partir de um determinado período. 
 
@@ -105,11 +96,6 @@ Em contrapartida, observa-se uma variação muito maior para os EUA, China e Jap
 ![a](codigo/figuras/estaticas/paises_evolucao.svg)
 
 Quanto aos EUA e China, o gráfico evidencia que os EUA entraram em franco declínio em 2015, ao passo que a China aumentou significativamente sua participação também a partir daquele ano. Essa tendência de inversão se consolida após 2017, onde a China passa a ter uma maior participação do que os EUA nas últimas 8 edições da lista. 
-
-Do ponto de vista geopolítico, 
-
-Mais especificamente sobre o Brasil...
-
 
 ### Eficiência dos supercomputadores
 A posição de um supercomputador no Top500 é determinada a partir do número de operações de ponto flutuante executadas por segundo (**FLOPS - Floating Point Operations per Second**). Portanto, quanto maior for esse número, maior será a posição ocupada pelo supercomputador nesse *ranking*. O supercomputador **Fugaku**, por exemplo, foi capaz de executar 442 quadrilhões de operações de ponto flutuante por segundo, resultado que o fez ocupar a primeira posição na última lista divulgada pelo Top500 (novembro de 2020). Como pode ser visto na imagem abaixo, **o desempenho nominal** dos supercomputadores tem crescido exponencialmente nesses últimos 27 anos. 
@@ -156,28 +142,30 @@ Infiniband:
 - Desvio Padrão: 13,03
 
 **Hipóteses:**
-- H0: A eficiência média entre os supercomputadores que utilizam as redes Gigabit Ethernet e Infiniband são **iguais**. 
-- Ha: A eficiência média entre os supercomputadores que utilizam as redes Gigabit Ethernet e Infiniband são **diferentes**. 
+- H<sub>0</sub>: A eficiência média entre os supercomputadores que utilizam as redes Gigabit Ethernet e Infiniband são **iguais**. 
+- H<sub>A</sub>: A eficiência média entre os supercomputadores que utilizam as redes Gigabit Ethernet e Infiniband são **diferentes**. 
 
 **Tipo de teste:**
+
 Para testar essas hipóteses, foi aplicado o **teste T para amostras independentes** considerando uma significância estatística (alfa) de 5%. Antes de executar o teste, foi verificado que as variâncias das amostras podem ser consideradas iguais, já que o valor-p do teste de **Levene** foi igual a 0,44445406530667875, ou seja, maior do que 0,05. 
 
 **Resultado:**
 - Estatística T: -6,090534920203153
-- Valor-p: 5,7536463876960684e-09
+- Valor-p: 0,00000000057536463877
 
 **Interpretação:**
-O teste de hipótese permitiu concluir que, com um nível de significância estatística de 5%, há indícios suficientes para refutar a hipótese de que a eficiência média dos supercomputadores que utilizam as redes Gigabit Ethernet e Infiniband sejam iguais. Sendo assim, é possível afirmar que, para o contexto descrito nesse trabalho, os supercomputadores que utilizam a rede Infiniband foram capazes de obter uma maior eficiência média dos que utilizam a rede Gigabit Ethernet. 
 
-Naturalmente, essa análise deve ser vista como mais um indício que corrobora com o entendimento geral de que as redes de interconexão são parte fundamental de um supercomputador
+O teste de hipótese permitiu concluir que, com um nível de significância estatística de 5%, há indícios suficientes para **refutar a hipótese de que a eficiência média dos supercomputadores que utilizam as redes Gigabit Ethernet e Infiniband sejam iguais** para o contexto apresentado nesse trabalho. Sendo assim, é possível afirmar que os supercomputadores que utilizam a rede Infiniband foram capazes de obter uma maior eficiência média dos que utilizam a rede Gigabit Ethernet. 
+
+Naturalmente, essa análise deve ser vista mais como um indício que corrobora com o entendimento geral de que as redes de interconexão são parte fundamental de um supercomputador, não somente ao que tange o desempenho nomimal, mas também a respeito da eficiência alcançada pelo equipamento. 
 
 
 
 
-### Previsão para Exaflop
+### Previsão para 1 Exaflop
 - Criar modelo de previsão de séries temporais
 - Previsão para 1 exaflop aconteceria quando?
-- Será que daria para chutar a chance dos países de alcançar primeiro?
+
 
 
 
