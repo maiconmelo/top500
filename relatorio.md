@@ -1,6 +1,6 @@
 <!-- antes de enviar a versão final, solicitamos que todos os comentários, colocados para orientação ao aluno, sejam removidos do arquivo -->
 
-# Exploração e Análise de Dados dos Supercomputadores Listados no Top500
+# Análise de Dados dos Supercomputadores Listados no Top500
 
 #### Aluno: [Maicon Melo Alves](https://github.com/maiconmelo).
 #### Orientadora: [Profa. Evelyn Conceição Santos Batista](https://github.com/evysb).
@@ -124,25 +124,44 @@ Diferentemente do desempenho nominal, que tem crescido ao longo do tempo, a efic
 
 A eficiência de um supercomputador depende de diversos fatores que variam desde a tecnologia do hardware que compõe o equipamento até as pilhas de software utilizadas para gerenciar a máquina. Dessa forma, considerando apenas as informações resumidas que são disponibilizadas pelo Top500, não é plausível realizar uma investigação mais profunda sobre os fatores que influenciam a eficiência dos supercomputadores.
 
-Entretanto, como é de conhecimento da comunidade que atua nessa área, um dos fatores que pode afetar a eficiência de um supercomputador é a tecnologia da **rede de interconexão** utilizada para conectar os diversos servidores ou nós de processamento que compõem a máquina. Para analisar essa hipótese, foram estratificados os dados de eficiência e tecnologia de interconexão dos supercomputadores listados  nas últimas duas edições publicadas pelo Top500, ou seja, as listas de junho e novembro de 2020. O gráfico a seguir mostra a distribuição da eficiência em relação a tecnologia de interconexão desses supercomputadores.
+Entretanto, como é de conhecimento da comunidade que atua nessa área, um dos fatores que pode afetar a eficiência de um supercomputador é a tecnologia da **rede de interconexão** utilizada para conectar os servidores que compõem a máquina. Para analisar essa hipótese, foram estratificados os dados de eficiência e tecnologia de interconexão dos supercomputadores listados nas últimas duas edições publicadas pelo Top500, ou seja, as listas de junho e novembro de 2020. 
 
 ![a](codigo/figuras/estaticas/eficiencia_interconexao.svg)
 
-Esse gráfico mostra que a mediana da eficiência alcançada pelos supercomputadores que utilizam a rede **Gigabit Ethernet** (53,27%) é bem menor do que a eficiência medianda obtida por aqueles que usam uma **Proprietary Network** (84,75%). Contudo, essa diferença entre os valores médios de eficiência pode ser atribuída ao mero acaso, não indicando, assim, que exista alguma relação entre eficiência e a tecnologia da rede de interconexão. 
 
-Com a finalidade de investigar essa questão, foi executado o seguinte teste de hipótese: 
+Dentre as tecnologias de interconexão utilizadas pelos supercomputadores dessas edições da lista, foram selecionadas as redes **Gigabit Ethernet** e **Infiniband** para avaliar essa questão. 
+
+Com a finalidade de amenizar os efeitos que outros fatores poderiam incutir na eficiência, os dados dessas duas amostras foram filtrados de forma que os supercomputadores selecionados utilizassem a mesma tecnologia do processador, e que nenhum tipo de acelerador. Resultando em duas amostras. 
+
+
+Esse gráfico mostra que a mediana da eficiência alcançada pelos supercomputadores 
+
+que utilizam a rede **Gigabit Ethernet** (53,27%) é menor do que a eficiência mediana obtida por aqueles que usam **Infiniband** (56,57%). Contudo, essa diferença pode estar relacionada ao mero acaso ou, por exemplo, a outros fatores como a tecnologia do processador e a adoção ou não de aceleradores.
+
+
+Amostra A: 
+- Tamanho: 
+- Média:
+- Mediana:
+- Desvio Padrão: 
+
+Amostra A: 
+- Tamanho: 
+- Média:
+- Mediana:
+- Desvio Padrão: 
 
 Hipóteses:
-- H0: A eficiência média entre os supercomputadores que utilizam as redes Gigabit Ethernet e Proprietary Network são **iguais**. 
-- Ha: A eficiência média entre os supercomputadores que utilizam as redes Gigabit Ethernet e Proprietary Network são **diferentes**. 
+- H0: A eficiência média entre os supercomputadores que utilizam as redes Gigabit Ethernet e Infiniband são **iguais**. 
+- Ha: A eficiência média entre os supercomputadores que utilizam as redes Gigabit Ethernet e Infiniband são **diferentes**. 
 
-Para esse teste, foi aplicado o **teste T para amostras independentes** considerando uma significância estatística (alfa) igual a 0,05. Antes de executar o teste, foi verificar que as variâncias das amostras podem ser consideradas iguais, já que o valor-p do teste de Levene foi igual a 0.13145125235737942. 
+Para esse teste, foi aplicado o **teste T para amostras independentes** considerando uma significância estatística (alfa) de 5%. Antes de executar o teste, foi verificado que as variâncias das amostras podem ser consideradas iguais, já que o valor-p do teste de Levene foi igual a 0.13145125235737942. 
 
 Resultado:
 - Estatística T: -4.415620821655465
 - Valor-p: 1.2235353129864692e-05
 
-
+O teste de hipótese permitiu concluir que, com um nível de significância estatística de 5%, há indícios suficientes para refutar a hipótese de que a eficiência média dos supercomputadores que utilizam as redes Gigabit Ethernet e Infiniband sejam iguais. Sendo assim, é possível afirmar que, para o contexto descrito nesse trabalho, há diferença entre a eficiência média dos supercompumédias de jogos ganhos dentro e fora de casa, indicando que o número de jogos ganhos dentro de casa é, em média, maior do que a quantidade de jogos vencidos fora de casa.
 
 
 
