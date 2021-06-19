@@ -40,7 +40,7 @@ Por meio da extração, exploração e análise de dados dos supercomputadores l
 - Relação entre eficiência alcançada pelos supercomputadores e sua rede de interconexão
 - Previsão para o possível rompimento da barreira de 1 Exaflop
 
-### Extração
+### Extração dos Dados
 
 Os dados foram coletados diretamente do site [Top500](www.top500.org) por meio de um programa especificamente criado para esse fim. Como os dados só podem ser acessados após a autenticação do usuário, foi preciso implementar algumas técnicas de *web scraping* a fim de identificar o *token* utilizado na autenticação. 
 
@@ -70,7 +70,7 @@ Como havia uma série de inconsistências entre grupos de arquivos, foi necessá
 
 Vale ressaltar que esses atributos não estão disponíveis para todos os registros do conjunto de dados, já que algumas dessas informações foram introduzidas somente a partir de um determinado período. 
 
-### Posicionamento geopolítico 
+### Posicionamento geopolítico dos países no contexto da computação de alto desempenho
 
 Para avaliar a representatividade das nações no contexto da supercomputação, foi apurado, para cada país, o total de supercomputadores que ocuparam alguma posição no Top500, considerando todas as 56 listas publicadas até hoje. O gráfico abaixo mostra esse quantitativo de ocorrências no Top500 por país. Uma versão interativa desse mapa pode ser acessada [aqui](codigo/html/ocorrencias_por_pais_mapa.html).
 
@@ -97,7 +97,7 @@ Em contrapartida, observa-se uma variação muito maior para os EUA, China e Jap
 
 Quanto aos EUA e China, o gráfico evidencia que os EUA entraram em franco declínio em 2015, ao passo que a China aumentou significativamente sua participação também a partir daquele ano. Essa tendência de inversão se consolida após 2017, onde a China passa a ter uma maior participação do que os EUA nas últimas 8 edições da lista. 
 
-### Eficiência dos supercomputadores
+### Eficiência dos supercomputadores em relação a sua rede de interconexão
 A posição de um supercomputador no Top500 é determinada a partir do número de operações de ponto flutuante executadas por segundo (**FLOPS - Floating Point Operations per Second**). Portanto, quanto maior for esse número, maior será a posição ocupada pelo supercomputador nesse *ranking*. O supercomputador **Fugaku**, por exemplo, foi capaz de executar 442 quadrilhões de operações de ponto flutuante por segundo, resultado que o fez ocupar a primeira posição na última lista divulgada pelo Top500 (novembro de 2020). Como pode ser visto na imagem abaixo, **o desempenho nominal** dos supercomputadores tem crescido exponencialmente nesses últimos 27 anos. 
 
 ![a](codigo/figuras/estaticas/desempenho_historico.svg)
