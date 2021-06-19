@@ -129,15 +129,11 @@ Entretanto, como é de conhecimento da comunidade que atua nessa área, um dos f
 ![a](codigo/figuras/estaticas/eficiencia_interconexao.svg)
 
 
-Dentre as tecnologias de interconexão utilizadas pelos supercomputadores dessas edições da lista, foram selecionadas as redes **Gigabit Ethernet** e **Infiniband** para avaliar essa questão. 
+Dentre as tecnologias de interconexão utilizadas pelos supercomputadores dessas edições da lista, foram selecionadas as redes **Gigabit Ethernet** e **Infiniband** para avaliar essa questão. Essas redes foram escolhidas, pois apresentam diferentes médias de eficiência e um número de amostras não tão discrepante como para os outros casos. 
 
-Com a finalidade de amenizar os efeitos que outros fatores poderiam incutir na eficiência, os dados dessas duas amostras foram filtrados de forma que os supercomputadores selecionados utilizassem a mesma tecnologia do processador, e que nenhum tipo de acelerador. Resultando em duas amostras. 
+Com a finalidade de amenizar os efeitos que outros fatores poderiam incutir na eficiência, os supercomputadores que utilizam essas duas redes foram filtrados de forma que utilizassem a mesma tecnologia do processador e nenhuma adoção de aceleradores
 
-
-Esse gráfico mostra que a mediana da eficiência alcançada pelos supercomputadores 
-
-que utilizam a rede **Gigabit Ethernet** (53,27%) é menor do que a eficiência mediana obtida por aqueles que usam **Infiniband** (56,57%). Contudo, essa diferença pode estar relacionada ao mero acaso ou, por exemplo, a outros fatores como a tecnologia do processador e a adoção ou não de aceleradores.
-
+Para verificar se essa diferença não estaria relacionada ao mero acaso, foi conduzido o  teste de hipótese descrito a seguir: 
 
 Amostra A: 
 - Tamanho: 
@@ -145,7 +141,7 @@ Amostra A:
 - Mediana:
 - Desvio Padrão: 
 
-Amostra A: 
+Amostra B: 
 - Tamanho: 
 - Média:
 - Mediana:
@@ -163,7 +159,7 @@ Resultado:
 
 O teste de hipótese permitiu concluir que, com um nível de significância estatística de 5%, há indícios suficientes para refutar a hipótese de que a eficiência média dos supercomputadores que utilizam as redes Gigabit Ethernet e Infiniband sejam iguais. Sendo assim, é possível afirmar que, para o contexto descrito nesse trabalho, há diferença entre a eficiência média dos supercompumédias de jogos ganhos dentro e fora de casa, indicando que o número de jogos ganhos dentro de casa é, em média, maior do que a quantidade de jogos vencidos fora de casa.
 
-
+Naturalmente, essa análise deve ser vista como mais um indício que corrobora com 
 
 
 
