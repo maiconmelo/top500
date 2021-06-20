@@ -10,6 +10,7 @@ Created on Thu Jun 27 14:31:22 2019
 import sys
 import data
 import analysis
+import prediction
 import country_converter as cc
 
 ''' Functions '''
@@ -21,7 +22,8 @@ def main():
     df_top500 = data.get_data()
     
     #analysis.countries(df_top500)
-    analysis.efficiency(df_top500)
+    #analysis.efficiency(df_top500)
+    prediction.exaflop(df_top500)
     
     
     
