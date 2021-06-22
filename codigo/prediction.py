@@ -21,10 +21,10 @@ from keras.callbacks import ReduceLROnPlateau, ModelCheckpoint, EarlyStopping
 # Parâmetros
 train_proportion = 0.7
 window = 2
-neuronios = 64
+neuronios = 128
 camada_intermed = False
 otimizador ='adam'
-epocas = 50000
+epocas = 100000
 steps_ahead = 1
     
 def create_dataset(dataset_train, dataset_test):
@@ -81,9 +81,9 @@ def split_data(df_prediction):
 
 def train_model(X_train, y_train, X_test, y_test):
     callbacks = [
-        ReduceLROnPlateau(patience=10, factor=0.5, verbose=True), # Redução da taxa de aprendizado
+        ReduceLROnPlateau(patience=10, factor=0.5), # Redução da taxa de aprendizado
         ModelCheckpoint('best.model', save_best_only=True),
-        EarlyStopping(patience=25, verbose=True) # Interrupção do treinamento pelo monitoramento do erro de validação
+        EarlyStopping(patience=25) # Interrupção do treinamento pelo monitoramento do erro de validação
     ]
 
    
@@ -106,7 +106,7 @@ def train_model(X_train, y_train, X_test, y_test):
     model.compile(loss='mean_squared_error', optimizer=otimizador)
 
     # Processa o modelo
-    #resp = model.fit(X_train, y_train, epochs=epocas, batch_size=12, verbose=0, callbacks=callbacks, validation_data=(X_test, y_test))
+    #/resp = model.fit(X_train, y_train, epochs=epocas, batch_size=12, verbose=0, callbacks=callbacks, validation_data=(X_test, y_test))
     resp = model.fit(X_train, y_train, verbose=0, epochs=epocas, batch_size=12)
 
     
