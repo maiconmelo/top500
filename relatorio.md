@@ -167,25 +167,32 @@ Dada a importância desse assunto, esse trabalho utilizou a série histórica de
 A partir de tal ano...
 
 **Série temporal**
-- Período: 
-- Tamanho:
-- Dimensão de tempo: listas publicadas no Top500
+- Período: junho de 2008 à novembro de 2020
+- Registros: 26 
+- Dimensão de tempo: edições semestrais
 
 
 gráfico. 
 
-**Modelo**
-- Janela de previsão: 2
-- Treinamento: 70%
+**Parâmetros**
+- Janela de previsão: 2, 4 e 6
+- Divisão dos dados: 70% para treinamento e 30% para teste
+- Otimizadores: adam e sgd
+- Neurônios: 16, 32, 64, 128 e 256
+- Épocas: 1000, 2000, 3000 
+- Métricas avaliadas: RMSE e MAPE
 
-**Métricas avaliadas**
+**Melhor modelo**
+
+O melhor modelo foi obtido
+
+gráfico
 
 
 
+**Previsão para 1 Exaflop**
 
-Configuração da rede
 
-Resultados
 
 
 
