@@ -16,9 +16,6 @@ import scipy.stats as stats
 from statsmodels.formula.api import ols
 
 
-
-
-
 def countries_summary(df_analysis):
     df = df_analysis.groupby('list').country.value_counts()
     df = df.reset_index(name="occurrences")

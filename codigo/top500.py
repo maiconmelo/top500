@@ -23,7 +23,7 @@ def main():
     
     #analysis.countries(df_top500)
     #analysis.efficiency(df_top500)
-    prediction.exaflop(df_top500)
+    prediction.rmax(df_top500)
     
     
     
