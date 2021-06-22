@@ -19,12 +19,13 @@ from sklearn.preprocessing import MinMaxScaler
 from keras.callbacks import ReduceLROnPlateau, ModelCheckpoint, EarlyStopping
 
 # Parâmetros
-train_proportion = 0.86
+train_proportion = 0.7
 window = 2
-neuronios = 80
+neuronios = 64
 camada_intermed = False
 otimizador ='adam'
-epocas = 800
+epocas = 50000
+steps_ahead = 1
     
 def create_dataset(dataset_train, dataset_test):
     
@@ -68,6 +69,7 @@ def create_dataset(dataset_train, dataset_test):
 def split_data(df_prediction):
     # Carregando do dataset
     dataset = df_prediction[df_prediction['rank'] == 1].rmax
+    dataset = dataset[35:]
     dataset_index = int(len(dataset) * train_proportion)
     
     dataset_train = dataset.iloc[:dataset_index]
@@ -122,7 +124,7 @@ def evaluate_model(model, X_train, X_test, y_test, training_set, test_set, sc):
     allForecastedData = np.vstack((training_set[0:window], training_predicted_values, predicted_values))
     plt.plot(allTargetData, color = 'red', label = 'Real')
     plt.plot(allForecastedData, color = 'blue', label = 'Previsto')
-    plt.title('Previsão de série temporal')
+    plt.title(f'Previsão de série temporal ({epocas}, {neuronios})')
     plt.xlabel('Edições do Top500')
     plt.ylabel('Desempenho Nominal')
     plt.legend()
@@ -158,6 +160,6 @@ def rmax(df_top500):
     X_train, y_train, X_test, y_test, sc, training_set, test_set = create_dataset(dataset_train, dataset_test)
     model = train_model(X_train, y_train, X_test, y_test)
     evaluate_model(model, X_train, X_test, y_test, training_set, test_set, sc)
-    forecast(model, dataset_test, window, 1, sc)
+    forecast(model, dataset_test, window, steps_ahead, sc)
 
    
