@@ -34,11 +34,11 @@ Mais do que um relatório sobre equipamentos e dispositivos, a Top500 indica qua
 
 ### Objetivo
 
-Por meio da extração, exploração e análise de dados dos supercomputadores listados em todas as edições no Top500, esse trabalho tem o objetivo de analisar e investigar os seguintes aspectos: 
+Por meio da extração, exploração e análise de dados dos supercomputadores listados em todas as edições no Top500, esse trabalho tem o objetivo de: 
 
-- Posicionamento geopolítico dos países no contexto da computação de alto desempenho
-- Relação entre eficiência alcançada pelos supercomputadores e sua rede de interconexão
-- Previsão para o possível rompimento da barreira de 1 Exaflop
+- Analisar o posicionamento geopolítico dos países no contexto da computação de alto desempenho
+- Investigar a relação entre eficiência alcançada pelos supercomputadores e sua rede de interconexão
+- Criação de modelo para previsão de poder computacional
 
 ### Extração dos Dados
 
@@ -159,13 +159,18 @@ O teste de hipótese permitiu concluir que, com um nível de significância esta
 
 Naturalmente, essa análise deve ser vista mais como um indício que corrobora com o entendimento geral de que as redes de interconexão são parte fundamental de um supercomputador, não somente ao que tange o desempenho nomimal, mas também a respeito da eficiência alcançada pelo equipamento. 
 
+### Modelo para previsão de poder computacional
+Atualmente, os supercomputadores que ocupam as primeiras posições no Top500 tem apresentado um poder computacional que se encontra na esfera dos teraflops. 
 
+Série temporal do poder computacional alcançado pelos primeiros colocados no Top500. 
 
+Falar um pouco sobre a série temporal
 
-### Previsão para 1 Exaflop
-- Criar modelo de previsão de séries temporais
-- Previsão para 1 exaflop aconteceria quando?
+Rede LTSM
 
+Configuração da rede
+
+Resultados
 
 
 
