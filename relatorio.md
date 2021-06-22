@@ -108,7 +108,7 @@ Diferentemente do desempenho nominal, que tem crescido ao longo do tempo, a efic
 
 ![a](codigo/figuras/estaticas/eficiencia_historico.svg)
 
-A eficiência de um supercomputador depende de diversos fatores que variam desde a tecnologia do hardware que compõe o equipamento até as pilhas de software utilizadas para gerenciar a máquina. Dessa forma, considerando apenas as informações resumidas que são disponibilizadas pelo site, não é plausível realizar uma investigação mais profunda sobre os fatores que verdadeiramente influenciam a eficiência dos supercomputadores listados no Top500.
+A eficiência de um supercomputador depende de diversos fatores que variam desde a tecnologia do hardware que compõe o equipamento até as pilhas de software utilizadas para gerenciar a máquina. Dessa forma, considerando apenas as informações resumidas que são disponibilizadas pelo site, não é plausível realizar uma investigação mais profunda sobre quais seriam os fatores que verdadeiramente influenciam a eficiência dos supercomputadores listados no Top500.
 
 Entretanto, como é de conhecimento da comunidade de HPC, um dos fatores que mais contribuem para que um supercomputador alcance um bom desempenho é a **rede de interconexão** utilizada para conectar os seus servidores ou nós de processamento. Assim sendo, pode-se avaliar a hipótese de que a **eficiência obtida por um supercomputador listado no Top500 esteja relacionada a tecnologia da sua rede de interconexão**. 
 
@@ -159,14 +159,29 @@ O teste de hipótese permitiu concluir que, com um nível de significância esta
 
 Naturalmente, essa análise deve ser vista mais como um indício que corrobora com o entendimento geral de que as redes de interconexão são parte fundamental de um supercomputador, não somente ao que tange o desempenho nomimal, mas também a respeito da eficiência alcançada pelo equipamento. 
 
-### Modelo para previsão de poder computacional
-Atualmente, os supercomputadores que ocupam as primeiras posições no Top500 tem apresentado um poder computacional que se encontra na esfera dos teraflops. 
+### Modelo para previsão de desempenho computacional
+Na última lista divulgada pelo Top500, em novembro de 2020, todos os supercomputadores presentes no ranking atingiram mais de mil Teraflops de desempenho nominal, sendo que o supercomputador Fugaku, primeiro colocado na lista, alcançou a impressionante marca de 442 mil Teraflops de poder computacional. Esses dados evidenciam que a barreira de 1 Exaflop, que equivale a 1 milhão de Teraflops, deve ser superada muito em breve. Mais do que um mero resultado técnico,  tem um significado mais amplo mportante marco na história da computação que se reflete nas novas possibilidades de pesquisa
 
-Série temporal do poder computacional alcançado pelos primeiros colocados no Top500. 
+Dada a importância desse assunto, esse trabalho utilizou a série histórica de desempenho nominal dos primeiros colocados no Top500 para criar modelo que fosse capaz de prever quando essa marca será alcançada. Esse modelo foi criado a partir do treinamento de uma rede neural LSTM (Long Short..) que vem sendo empregada, dentre outros propósitos, para realizar a predição de séries temporais. 
 
-Falar um pouco sobre a série temporal
+A partir de tal ano...
 
-Rede LTSM
+**Série temporal**
+- Período: 
+- Tamanho:
+- Dimensão de tempo: listas publicadas no Top500
+
+
+gráfico. 
+
+**Modelo**
+- Janela de previsão: 2
+- Treinamento: 70%
+
+**Métricas avaliadas**
+
+
+
 
 Configuração da rede
 
