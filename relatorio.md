@@ -61,7 +61,6 @@ Como havia uma série de inconsistências entre grupos de arquivos, foi necessá
 - `rank`: posição na lista
 - `country`: país
 - `rmax`: desempenho nominal em teraflops
-- `rpeak`: desempenho máximo teórico
 - `processor_technology`: tecnologia do processador
 - `interconnect_family`: tecnologia de interconexão
 - `list`: edição da lista 
@@ -116,7 +115,6 @@ Para analisar essa hipótese, foram estratificados os dados de eficiência e tec
 
 ![a](codigo/figuras/estaticas/eficiencia_interconexao.svg)
 
-
 Dentre as tecnologias de interconexão utilizadas pelos supercomputadores dessas edições da lista, foram selecionadas as redes **Gigabit Ethernet** e **Infiniband** para avaliar essa questão. Essas redes foram escolhidas, pois apresentam diferentes médias de eficiência e um número de elementos razolável, ao contrário, por exemplo, da rede **Proprietary Network** que possui apenas 14 elementos nessa amostra. 
 
 Com a finalidade de amenizar os efeitos que outros fatores poderiam incutir na eficiência, os supercomputadores que utilizam essas duas redes foram filtrados de forma que utilizassem a mesma tecnologia do processador. Coincidentemente, em ambos os casos, a tecnologia de processador mais utilizada é exatamente a mesma: **Intel Skylake**. Além de igualar a tecnologia do processador, foram selecionados apenas os supercomputadores que não fossem dotados de dispositivos aceleradores. 
@@ -160,9 +158,9 @@ O teste de hipótese permitiu concluir que, com um nível de significância esta
 Naturalmente, essa análise deve ser vista mais como um indício que corrobora com o entendimento geral de que as redes de interconexão são parte fundamental de um supercomputador, não somente ao que tange o desempenho nomimal, mas também a respeito da eficiência alcançada pelo equipamento. 
 
 ### Modelo para previsão de desempenho computacional
-Na última lista divulgada pelo Top500, em novembro de 2020, todos os supercomputadores presentes no ranking atingiram mais de mil Teraflops de desempenho nominal, sendo que o supercomputador Fugaku, primeiro colocado na lista, alcançou a impressionante marca de 442 mil Teraflops de poder computacional. Esses dados evidenciam que a barreira de 1 Exaflop, que equivale a 1 milhão de Teraflops, deve ser superada muito em breve. Mais do que um mero resultado técnico,  tem um significado mais amplo mportante marco na história da computação que se reflete nas novas possibilidades de pesquisa
+Na última lista divulgada pelo Top500, em novembro de 2020, todos os supercomputadores presentes no ranking atingiram mais de mil Teraflops de desempenho nominal, sendo que o supercomputador Fugaku, primeiro colocado na lista, alcançou a impressionante marca de 442 mil Teraflops de poder computacional. Esses dados evidenciam que a barreira de **1 Exaflop**, que equivale a 1 milhão de Teraflops, deve ser superada muito em breve. Mais do que um mero resultado técnico,  tem um significado mais amplo mportante marco na história da computação que se reflete nas novas possibilidades de pesquisa
 
-Dada a importância desse assunto, esse trabalho utilizou a série histórica de desempenho nominal dos primeiros colocados no Top500 para criar modelo que fosse capaz de prever quando essa marca será alcançada. Esse modelo foi criado a partir do treinamento de uma rede neural LSTM (Long Short..) que vem sendo empregada, dentre outros propósitos, para realizar a predição de séries temporais. 
+Dada a importância desse assunto, esse trabalho utilizou a **série histórica de desempenho nominal** dos primeiros colocados no Top500 para criar modelo que fosse capaz de prever quando a marca de 1 Exaflop de desempenho nominal seria alcançada. Esse modelo foi criado a partir do treinamento de uma rede neural recorrente (*Recorrent Neural Network*) com arquitetura LSTM (*Long Short Term Memory*) que, dentre outros propósitos, vem sendo usada para realizar a predição de séries temporais. 
 
 A partir de tal ano...
 
