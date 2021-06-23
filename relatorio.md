@@ -162,6 +162,9 @@ Na última lista divulgada pelo Top500, em novembro de 2020, todos os supercompu
 
 Dada a importância desse assunto, esse trabalho utilizou a **série histórica de desempenho nominal** dos primeiros colocados no Top500 para criar um modelo que fosse capaz de prever quando a marca de 1 Exaflop de desempenho nominal seria alcançada. Esse modelo foi criado a partir do treinamento de uma rede neural recorrente (*Recorrent Neural Network*) com arquitetura LSTM (*Long Short Term Memory*) que, dentre outros propósitos, vem sendo usada para realizar a predição de séries temporais. 
 
+Como pode ser visto na imagem abaixo, o desempenho nominal dos primeiros colocados no Top500 começou a ter um aumento expressivo a partir de 2008. Por conta disso, o processo de treinamento considerou os dados históricos a partir daquele ano, já que a finalidade do modelo é justamente captar o movimento abrupto e exponencial que essa curva exibiu nesses últimos anos a fim de prever quando o desempenho de 1 Exaflop será alcançado. 
+
+![a](codigo/figuras/estaticas/desempenho_historico.svg)
 
 
 **Série temporal**
@@ -169,26 +172,25 @@ Dada a importância desse assunto, esse trabalho utilizou a **série histórica 
 - Registros: 26 
 - Dimensão de tempo: edições semestrais
 
+Após uma avaliação empírica considerando diferentes configurações da rede neural e do processo de treinamento, optou-se pelos parâmetros:
+- Janela de previsão: 2 edições
+- Treinamento: 70% dos dados
+- Otimizador: adam
+- Neurônios: 100
+- Épocas: 1000
 
-gráfico. 
+O modelo de previsão obteve um **RMSE** (*Root Mean Squared Error*) e **MAPE** (*Mean Absolute Percentage Error*) igual a 79264 e 29,21%, respectivamente. A imagem abaixo mostra a curva real de desempenho nominal e a que foi prevista pelo modelo. 
 
-**Parâmetros**
-- Janela de previsão: 2, 4 e 6
-- Divisão dos dados: 70% para treinamento e 30% para teste
-- Otimizadores: adam e sgd
-- Neurônios: 16, 32, 64, 128 e 256
-- Épocas: 1000, 2000, 3000 
-- Métricas avaliadas: RMSE e MAPE
+![a](codigo/figuras/estaticas/modelo.png)
 
-**Melhor modelo**
-
-O melhor modelo foi obtido
-
-gráfico
+O modelo foi usado para prever o desempenho nominal da próxima lista a ser divulgada pelo Top500 próximo 
 
 
 
-**Previsão para 1 Exaflop**
+
+Valor previsto: 1351082.0
+
+
 
 
 
