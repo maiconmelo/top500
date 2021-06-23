@@ -7,6 +7,7 @@ Created on Mon Jun 21 23:44:25 2021
 """
 
 import math
+import config
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -19,12 +20,12 @@ from sklearn.preprocessing import MinMaxScaler
 from keras.callbacks import ReduceLROnPlateau, ModelCheckpoint, EarlyStopping
 
 # Parâmetros
-train_proportion = 0.7
+train_proportion = 0.70
 window = 2
-neuronios = 128
+neuronios = 100
 camada_intermed = False
 otimizador ='adam'
-epocas = 100000
+epocas = 1000
 steps_ahead = 1
     
 def create_dataset(dataset_train, dataset_test):
@@ -69,9 +70,10 @@ def create_dataset(dataset_train, dataset_test):
 def split_data(df_prediction):
     # Carregando do dataset
     dataset = df_prediction[df_prediction['rank'] == 1].rmax
-    dataset = dataset[35:]
+    dataset = dataset[30:]
+
+
     dataset_index = int(len(dataset) * train_proportion)
-    
     dataset_train = dataset.iloc[:dataset_index]
     dataset_test = dataset.iloc[dataset_index:]
    
@@ -86,8 +88,6 @@ def train_model(X_train, y_train, X_test, y_test):
         EarlyStopping(patience=25) # Interrupção do treinamento pelo monitoramento do erro de validação
     ]
 
-   
-
     model = Sequential()
 
     # Camada de entrada com o janelamento e identificação se será feito em duas camadas
@@ -96,8 +96,12 @@ def train_model(X_train, y_train, X_test, y_test):
 
     # Camada intermediária
     if camada_intermed:
+        model.add(LSTM(neuronios, return_sequences=True))
+        model.add(Dropout(0.2))
+
         model.add(LSTM(neuronios, return_sequences=False))
         model.add(Dropout(0.2))
+
 
     # Camada de saída
     model.add(Dense(1))
@@ -106,8 +110,8 @@ def train_model(X_train, y_train, X_test, y_test):
     model.compile(loss='mean_squared_error', optimizer=otimizador)
 
     # Processa o modelo
-    #/resp = model.fit(X_train, y_train, epochs=epocas, batch_size=12, verbose=0, callbacks=callbacks, validation_data=(X_test, y_test))
-    resp = model.fit(X_train, y_train, verbose=0, epochs=epocas, batch_size=12)
+    #resp = model.fit(X_train, y_train, epochs=epocas, batch_size=24, verbose=0, callbacks=callbacks, validation_data=(X_test, y_test))
+    resp = model.fit(X_train, y_train, verbose=0, epochs=epocas, batch_size=6)
 
     
     return model
@@ -124,10 +128,11 @@ def evaluate_model(model, X_train, X_test, y_test, training_set, test_set, sc):
     allForecastedData = np.vstack((training_set[0:window], training_predicted_values, predicted_values))
     plt.plot(allTargetData, color = 'red', label = 'Real')
     plt.plot(allForecastedData, color = 'blue', label = 'Previsto')
-    plt.title(f'Previsão de série temporal ({epocas}, {neuronios})')
-    plt.xlabel('Edições do Top500')
-    plt.ylabel('Desempenho Nominal')
+    plt.title('Previsão de desempenho nominal')
+    plt.xlabel('Edições Semestrais do Top500')
+    plt.ylabel('Desempenho Nominal (Teraflops)')
     plt.legend()
+    plt.savefig(config.static_fig_path + "modelo.png")
     plt.show()
     
 
@@ -152,6 +157,7 @@ def forecast(model, dataset_test, window, steps_ahead, sc):
         last_data[0][0] = new_first.copy()
         
     print(f"Valor previsto: {predicted_value[0][0]} - Passos: {steps_ahead}")
+
 
 def rmax(df_top500):
     df_prediction = df_top500.copy()
