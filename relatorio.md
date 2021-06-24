@@ -97,6 +97,7 @@ Em contrapartida, observa-se uma variação muito maior para os EUA, China e Jap
 Quanto aos EUA e China, o gráfico evidencia que os EUA entraram em franco declínio em 2015, ao passo que a China aumentou significativamente sua participação também a partir daquele ano. Essa tendência de inversão se consolida após 2017, onde a China passa a ter uma maior participação do que os EUA nas últimas 8 edições da lista. 
 
 ### Eficiência dos supercomputadores em relação a sua rede de interconexão
+
 A posição de um supercomputador no Top500 é determinada a partir do número de operações de ponto flutuante executadas por segundo (**FLOPS - Floating Point Operations per Second**). Portanto, quanto maior for esse número, maior será a posição ocupada pelo supercomputador nesse *ranking*. O supercomputador **Fugaku**, por exemplo, foi capaz de executar 442 quadrilhões de operações de ponto flutuante por segundo, resultado que o fez ocupar a primeira posição na última lista divulgada pelo Top500 (novembro de 2020). Como pode ser visto na imagem abaixo, **o desempenho nominal** dos supercomputadores tem crescido exponencialmente nesses últimos 27 anos. 
 
 ![a](codigo/figuras/estaticas/desempenho_historico.svg)
@@ -158,6 +159,7 @@ O teste de hipótese permitiu concluir que, com um nível de significância esta
 Naturalmente, essa análise deve ser vista mais como um indício que corrobora com o entendimento geral de que as redes de interconexão são parte fundamental de um supercomputador, não somente ao que tange o desempenho nomimal, mas também a respeito da eficiência alcançada pelo equipamento. 
 
 ### Modelo para previsão de desempenho computacional
+
 Na última lista divulgada pelo Top500, em novembro de 2020, todos os supercomputadores presentes no ranking atingiram mais de mil Teraflops de desempenho nominal, sendo que o supercomputador Fugaku, primeiro colocado na lista, alcançou a impressionante marca de 442 mil Teraflops de poder computacional. Esses dados evidenciam que a barreira de **1 Exaflop**, que equivale a 1 milhão de Teraflops, deve ser superada muito em breve. Mais do que um mero resultado técnico, o alcance de tal desempenho repesenta um importante marco na história da computação moderna.
 
 Dada a importância desse assunto, esse trabalho utilizou a **série histórica de desempenho nominal** dos primeiros colocados no Top500 para criar um modelo que fosse capaz de prever quando a marca de 1 Exaflop de desempenho nominal seria alcançada. Esse modelo foi criado a partir do treinamento de uma rede neural recorrente (*Recorrent Neural Network*) com arquitetura LSTM (*Long Short Term Memory*) que, dentre outros propósitos, vem sendo usada para realizar a predição de séries temporais. 
@@ -166,13 +168,12 @@ Como pode ser visto na imagem abaixo, o desempenho nominal dos primeiros colocad
 
 ![a](codigo/figuras/estaticas/desempenho_historico.svg)
 
-
-**Série temporal**
+**Descrição da série temporal**
 - Período: junho de 2008 à novembro de 2020
 - Registros: 26 
 - Dimensão de tempo: edições semestrais
 
-Após uma avaliação empírica considerando diferentes configurações da rede neural e do processo de treinamento, optou-se pelos seguintes parâmetros:
+Após uma avaliação empírica considerando diferentes configurações da rede neural e do processo de treinamento, optou-se pelos seguintes **parâmetros**:
 - Janela de previsão: 3 edições
 - Treinamento: 70% dos dados
 - Otimizador: adam
@@ -183,7 +184,7 @@ O modelo de previsão obteve um **RMSE** (*Root Mean Squared Error*) e **MAPE** 
 
 ![a](codigo/figuras/estaticas/modelo.png)
 
-O modelo foi usado para prever o desempenho nominal das próximas edições da lista conforme descrito abaixo: 
+O modelo foi usado para prever o desempenho nominal das próximas edições da lista. Como pode ser visto na tabela abaixo, o modelo previu que, em novembro de 2022, o primeiro supercomputador colocado no ranking irá apresentar um desempenho nominal de 1,021723 Exaflops.  
 
 | Edição | Previsão de desempenho nominal (Exaflops|
 |:-:|:-:|
@@ -193,15 +194,7 @@ O modelo foi usado para prever o desempenho nominal das próximas edições da l
 |**Novembro de 2022**| **1,021723**|
 
 
-
-
-
-
-
-
-
-
-
+### Conclusão e trabalhos futuros
 
 
 
