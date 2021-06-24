@@ -172,23 +172,33 @@ Como pode ser visto na imagem abaixo, o desempenho nominal dos primeiros colocad
 - Registros: 26 
 - Dimensão de tempo: edições semestrais
 
-Após uma avaliação empírica considerando diferentes configurações da rede neural e do processo de treinamento, optou-se pelos parâmetros:
-- Janela de previsão: 2 edições
+Após uma avaliação empírica considerando diferentes configurações da rede neural e do processo de treinamento, optou-se pelos seguintes parâmetros:
+- Janela de previsão: 3 edições
 - Treinamento: 70% dos dados
 - Otimizador: adam
 - Neurônios: 100
 - Épocas: 1000
 
-O modelo de previsão obteve um **RMSE** (*Root Mean Squared Error*) e **MAPE** (*Mean Absolute Percentage Error*) igual a 79264 e 29,21%, respectivamente. A imagem abaixo mostra a curva real de desempenho nominal e a que foi prevista pelo modelo. 
+O modelo de previsão obteve um **RMSE** (*Root Mean Squared Error*) e **MAPE** (*Mean Absolute Percentage Error*) igual a 79623 e 33,11%, respectivamente. A imagem abaixo mostra a curva real de desempenho nominal e a que foi prevista pelo modelo. 
 
 ![a](codigo/figuras/estaticas/modelo.png)
 
-O modelo foi usado para prever o desempenho nominal da próxima lista a ser divulgada pelo Top500 próximo 
+O modelo foi usado para prever o desempenho nominal das próximas edições da lista conforme descrito abaixo: 
+
+| Edição | Previsão de desempenho nominal (Exaflops|
+|:-:|:-:|
+|Junho de 2021 | 0,566721|
+|Novembro de 2021 | 0,787273|
+|Junho de 2022 | 0,949081|
+|**Novembro de 2022**| **1,021723**|
 
 
 
 
-Valor previsto: 1351082.0
+
+
+
+
 
 
 
