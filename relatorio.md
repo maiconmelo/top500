@@ -48,6 +48,7 @@ Após realizar a autenticação do usuário, o programa é capaz de executar o d
 
 Como havia uma série de inconsistências entre grupos de arquivos, foi necessário realizar um pré-processamento manual nesses dados a fim de torná-los mais coerentes, legíveis e confiáveis. 
 
+O código usado para executar essa extração de dados [aqui](codigo/data.py). 
 
 ### Visão Geral dos Dados
 
@@ -71,7 +72,7 @@ Vale ressaltar que esses atributos não estão disponíveis para todos os regist
 
 ### Posicionamento geopolítico dos países no contexto da computação de alto desempenho
 
-Para avaliar a representatividade das nações no contexto da supercomputação, foi apurado, para cada país, o total de supercomputadores que ocuparam alguma posição no Top500, considerando todas as 56 listas publicadas até hoje. O gráfico abaixo mostra esse quantitativo de ocorrências no Top500 por país. Uma versão interativa desse mapa pode ser acessada [aqui](codigo/html/ocorrencias_por_pais_mapa.html).
+Para avaliar a representatividade das nações no contexto da supercomputação, foi apurado, para cada país, o total de supercomputadores que ocuparam alguma posição no Top500, considerando todas as 56 listas publicadas até hoje. O gráfico abaixo mostra esse quantitativo de ocorrências no Top500 por país. Uma versão interativa das figuras apresentadas nessa seção está disponibilizada [aqui](codigo/figuras/interativas/ocorrencias_por_pais_mapa.html).
 
 ![a](codigo/figuras/estaticas/mapa_ocorrencias.svg)
 
@@ -95,6 +96,8 @@ Em contrapartida, observa-se uma variação muito maior para os EUA, China e Jap
 ![a](codigo/figuras/estaticas/paises_evolucao.svg)
 
 Quanto aos EUA e China, o gráfico evidencia que os EUA entraram em franco declínio em 2015, ao passo que a China aumentou significativamente sua participação também a partir daquele ano. Essa tendência de inversão se consolida após 2017, onde a China passa a ter uma maior participação do que os EUA nas últimas 8 edições da lista. 
+
+O código usado para auxiliar na análise descrita nessa seção pode ser encontrado [aqui](codigo/analysis.py). 
 
 ### Eficiência dos supercomputadores em relação a sua rede de interconexão
 
@@ -158,6 +161,9 @@ O teste de hipótese permitiu concluir que, com um nível de significância esta
 
 Naturalmente, essa análise deve ser vista mais como um indício que corrobora com o entendimento geral de que as redes de interconexão são parte fundamental de um supercomputador, não somente ao que tange o desempenho nomimal, mas também a respeito da eficiência alcançada pelo equipamento. 
 
+O código usado para auxiliar na análise descrita nessa seção pode ser encontrado [aqui](codigo/analysis.py). 
+
+
 ### Modelo para previsão de desempenho computacional
 
 Na última lista divulgada pelo Top500, em novembro de 2020, todos os supercomputadores presentes no ranking atingiram mais de mil Teraflops de desempenho nominal, sendo que o supercomputador Fugaku, primeiro colocado na lista, alcançou a impressionante marca de 442 mil Teraflops de poder computacional. Esses dados evidenciam que a barreira de **1 Exaflop**, que equivale a 1 milhão de Teraflops, deve ser superada muito em breve. Mais do que um mero resultado técnico, o alcance de tal desempenho repesenta um importante marco na história da computação moderna.
@@ -186,13 +192,14 @@ O modelo de previsão obteve um **RMSE** (*Root Mean Squared Error*) e **MAPE** 
 
 O modelo foi usado para prever o desempenho nominal das próximas edições da lista. Como pode ser visto na tabela abaixo, o modelo previu que, em novembro de 2022, o primeiro supercomputador colocado no ranking irá apresentar um desempenho nominal de 1,021723 Exaflops.  
 
-| Edição | Previsão de desempenho nominal (Exaflops|
+| Edição | Previsão de desempenho nominal (Exaflops)|
 |:-:|:-:|
 |Junho de 2021 | 0,566721|
 |Novembro de 2021 | 0,787273|
 |Junho de 2022 | 0,949081|
 |**Novembro de 2022**| **1,021723**|
 
+O código usado para criar esse modelo pode ser encontrado [aqui](codigo/prediction.py). 
 
 ### Conclusão e trabalhos futuros
 
