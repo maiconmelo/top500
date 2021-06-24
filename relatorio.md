@@ -38,17 +38,37 @@ Por meio da extração, exploração e análise de dados dos supercomputadores l
 
 - Analisar o posicionamento geopolítico dos países no contexto da computação de alto desempenho
 - Investigar a relação entre eficiência alcançada pelos supercomputadores e sua rede de interconexão
-- Criação de modelo para previsão de poder computacional
+- Criar um modelo para previsão de poder computacional
 
 ### Extração dos Dados
 
-Os dados foram coletados diretamente do site [Top500](www.top500.org) por meio de um programa especificamente criado para esse fim. Como os dados só podem ser acessados após a autenticação do usuário, foi preciso implementar algumas técnicas de *web scraping* a fim de identificar o *token* utilizado na autenticação. 
+O site do [Top500](www.top500.org) disponibiliza, para cada uma das listas já pubilicadas, um arquivo no formato Excel contendo informações sobre os 500 colocados no ranking. Cada um dos arquivos pode ser baixado pelo link `https://www.top500.org/lists/top500/<ANO>/<MÊS>/download/TOP500_<ANO><MÊS>.xlsx`, onde `"<ANO>"` e `"<MÊS>"` devem ser substituídos pelo ano e pelo mês em que a lista foi publicada. Por exemplo, para baixar o arquivo que contém as informações da lista publicada em **novembro de 2020**, deve-se acessar a seguinte URL: `https://www.top500.org/lists/top500/2020/11/download/TOP500_202011.xlsx`
 
-Após realizar a autenticação do usuário, o programa é capaz de executar o download e leitura de 56 arquivos no formato Excel, onde cada arquivo representa uma lista publicada pelo Top500. Todos esses dados foram armazenados em um único arquivo CSV para facilitar uma posterior análise. 
+Para automatizar o processo de download dessas informações, foi criado um programa para acessar o referido site e extrair cada uma das listas já publicadas até hoje. Contudo, o acesso a esses arquivos só pode ser feito mediante autenticação de uma conta de usuário registrada no site. Além de usuário e senha, essa autenticação também faz uso de um **token de autenticação** que é alterado cada vez que o site é acessado. Portanto, para efetuar o **login** automatizado nesse site, é preciso enviar uma requisição HTTP que contenha, além do usuário e senha, o token de autenticação utilizado naquele instante. 
 
-Como havia uma série de inconsistências entre grupos de arquivos, foi necessário realizar um pré-processamento manual nesses dados a fim de torná-los mais coerentes, legíveis e confiáveis. 
+Por meio da ferramenta de inspeção de elementos do Firefox, foi possível identificar que esse site armazena o token de autenticação em um componente identificado como `csrfmiddlewaretoken`. A partir dessa informação, o programa pode utilizar uma biblioteca para acessar esse componente a fim de obter o token necessário para a autenticação. Após, basta enviar uma requisição `HTTP POST` contendo o usuário, a senha e o token de autenticação válido para aquele momento. 
 
-O código usado para executar essa extração de dados [aqui](codigo/data.py). 
+O seguinte trecho de código em Python exemplica como realizar esse processo: 
+
+    def login_website():
+      session = requests.session()
+      result = session.get(cfg.login_url)
+      tree = html.fromstring(result.text)
+      authenticity_token = list(set(tree.xpath("//input[@name='csrfmiddlewaretoken']/@value")))[0]
+    
+      payload = {
+            "login": cfg.username, 
+            "password": cfg.password, 
+            "csrfmiddlewaretoken": authenticity_token
+      }
+
+      session.post(cfg.login_url, data = payload, headers = dict(referer=cfg.login_url))
+    
+      return session
+
+Uma vez autenticado, o programa foi capaz de fazer o download de todas as listas publicadas no site. Esses dados foram armazenados em um arquivo CSV para que pudesse ser facilmente carregado em um dataframe Pandas, por exemplo. Contudo, ao analisar os dados coletados, foi observado que havia uma série de inconsistências entre as edições da lista, sendo necessário realizar um pré-processamento manual nesses dados a fim de torná-los mais coerentes, legíveis e confiáveis. 
+
+O dado completo pode ser encontrado [aqui](codigo/data/top500.csv), enquanto o código usado para executar essa extração de dados pode ser encontrado [aqui](codigo/data.py). 
 
 ### Visão Geral dos Dados
 
