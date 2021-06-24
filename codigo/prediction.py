@@ -21,12 +21,12 @@ from keras.callbacks import ReduceLROnPlateau, ModelCheckpoint, EarlyStopping
 
 # Parâmetros
 train_proportion = 0.70
-window = 2
+window = 3
 neuronios = 100
 camada_intermed = False
 otimizador ='adam'
 epocas = 1000
-steps_ahead = 1
+steps_ahead = 10
     
 def create_dataset(dataset_train, dataset_test):
     
@@ -139,24 +139,29 @@ def evaluate_model(model, X_train, X_test, y_test, training_set, test_set, sc):
     rmse = math.sqrt(mean_squared_error(y_test, predicted_values))
     print('RMSE: ', rmse)
 
-    mse = mean_squared_error(y_test, predicted_values)
-    print('MSE: ',mse)
+    #mse = mean_squared_error(y_test, predicted_values)
+    #print('MSE: ',mse)
 
     mape = np.mean(np.abs((y_test - predicted_values) / y_test)) * 100
     print('MAPE: ',mape, '%')    
 
 def forecast(model, dataset_test, window, steps_ahead, sc):
     last_data = dataset_test[-window:].values
+    last_data = np.reshape(last_data, (last_data.shape[0], 1))
+    last_data = sc.transform(last_data)
+    
     last_data = np.reshape(last_data, (1, last_data.shape[0], 1)) 
     
     for step in range(steps_ahead):
         predicted_value = model.predict(last_data)
-        predicted_value = sc.inverse_transform(predicted_value)
         new_first = last_data[0][-1].copy()
         last_data[0][-1] = predicted_value.copy()
         last_data[0][0] = new_first.copy()
-        
-    print(f"Valor previsto: {predicted_value[0][0]} - Passos: {steps_ahead}")
+        partial_result = sc.inverse_transform(predicted_value)
+        print(f"Valor previsto: {partial_result[0][0]} - Passo: {step+1}")
+ 
+    #predicted_value = sc.inverse_transform(predicted_value)    
+    #print(f"Valor previsto: {predicted_value[0][0]} - Passos: {steps_ahead}")
 
 
 def rmax(df_top500):
