@@ -13,14 +13,9 @@ Trabalho apresentado ao curso [BI MASTER](https://ica.puc-rio.ai/bi-master) como
 ---
 
 ### Resumo
-
-<!-- trocar o texto abaixo pelo resumo do trabalho, em português -->
-
+Por meio da exploração e análise de dados dos supercomputadores listados no Top500, este trabalho tem a finalidade de avaliar o posicionamento geopolítico das nações no contexto da supercomputação, verificar a hipótese de que a rede de interconexão dos supercomputadores exercem forte influência na eficiência alcançada pelos equipamentos e também apresentar um modelo de previsão de séries temporais capaz de indicar em qual edição futura do Top500 a barreira de 1 Exaflop será superada. 
 
 
-### Abstract <!-- Opcional! Caso não aplicável, remover esta seção -->
-
-<!-- trocar o texto abaixo pelo resumo do trabalho, em inglês -->
 
 
 ### Introdução
@@ -222,7 +217,7 @@ O modelo foi usado para prever o desempenho nominal das próximas edições da l
 O código usado para criar esse modelo pode ser encontrado [aqui](codigo/prediction.py). 
 
 ### Conclusão e trabalhos futuros
-
+Este trabalho realizou a exploração e análise de dados dos supercomputadores listados no Top500. Ao avaliar o posicionamento geopolítico das nações no contexto da supercomputação, foi possível constatar que houve uma recente mudança no protagonismo dos países, já que a China passou a ter uma maior participação no Top500 do que os EUA nas últimas 8 edições da lista. Além disso, o trabalho apontou que, com um significância estatística de 0,05, é possível afirmar que a rede de interconexão tem forte influência na eficiência alcançada pelos supercomputadores presentes na última edição da lista, lançada em novembro de 2020. Por fim, o trabalho apresentou um modelo de previsão de séries temporais, criado a partir de uma rede neural LSTM, capaz de prever em qual edição do Top500 o supercomputador posicionado na primeira colocação alcançaria 1 Exaflop. 
 
 
 
