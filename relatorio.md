@@ -1,6 +1,6 @@
 <!-- antes de enviar a versão final, solicitamos que todos os comentários, colocados para orientação ao aluno, sejam removidos do arquivo -->
 
-# Análise de Dados dos Supercomputadores Listados no Top500
+# Exploração e Análise de Dados dos Supercomputadores do Top500
 
 #### Aluno: [Maicon Melo Alves](https://github.com/maiconmelo).
 #### Orientadora: [Profa. Evelyn Conceição Santos Batista](https://github.com/evysb).
